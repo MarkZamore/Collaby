@@ -199,7 +199,7 @@ const AdminOps = () => {
                     </td>
                     <td><StatusBadge value={operation.status} /></td>
                     <td>
-                      {operation.deploymentNamespace ? `${operation.deploymentNamespace}/${operation.targetService} В· generation ${operation.deploymentGeneration ?? 'pending'}` : 'queued'}
+                      {operation.deploymentNamespace ? `${operation.deploymentNamespace}/${operation.targetService}: generation ${operation.deploymentGeneration ?? 'pending'}` : 'queued'}
                     </td>
                     <td>{new Date(operation.requestedAtUtc).toLocaleString()}</td>
                   </tr>
