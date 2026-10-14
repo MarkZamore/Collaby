@@ -53,7 +53,7 @@ public sealed class InvitationSmtpTests
         {
             if (data)
             {
-                if (line != ".") { body.AppendLine(line); continue; }
+                if (line != ".") { body.Append(line).Append("\r\n"); continue; }
                 data = false;
             }
             else if (line.StartsWith("DATA")) { data = true; await writer.WriteLineAsync("354 send data"); continue; }

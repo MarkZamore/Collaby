@@ -20,7 +20,14 @@ ENV VITE_REF_NAME=$VITE_REF_NAME
 ENV VITE_BUILD_TIMESTAMP=$VITE_BUILD_TIMESTAMP
 
 COPY frontend/package*.json ./
-RUN npm ci --prefer-offline --no-audit --progress=false
+# npm может пропустить ошибку optional download; такой слой нельзя кешировать как готовый.
+RUN attempt=1; while :; do \
+      npm ci --include=dev --include=optional --prefer-offline --no-audit --progress=false || exit $?; \
+      if node --input-type=module -e "try { await import('rolldown'); await import('@tailwindcss/oxide'); await import('lightningcss'); console.log('Native build dependencies verified'); } catch (error) { console.error(error); const missing = e => e && (['MODULE_NOT_FOUND', 'ERR_MODULE_NOT_FOUND'].includes(e.code) || missing(e.cause)); process.exit(missing(error) ? 42 : 1); }"; then break; else native_status=$?; fi; \
+      if [ "$native_status" -ne 42 ] || [ "$attempt" -ge 2 ]; then exit "$native_status"; fi; \
+      echo 'Optional native package is missing; retrying locked npm ci once'; \
+      attempt=$((attempt + 1)); \
+    done
 
 COPY frontend/ ./
 COPY panels/admin /panels/admin
