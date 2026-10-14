@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/admin.user-deletion-results.v1.schema.json",
+  "title": "admin.user-deletion-results.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "operationId",
+    "userId",
+    "targetService",
+    "status"
+  ],
+  "properties": {
+    "operationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "userId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "targetService": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "noop",
+        "failed"
+      ]
+    },
+    "deletedRecords": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "failureCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

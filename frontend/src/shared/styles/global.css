@@ -1,0 +1,192 @@
+/* Global Styles - Base */
+
+:root {
+  color-scheme: light;
+
+  /* Legacy text aliases — map to canonical --app-text-* tokens from index.css */
+  --text-primary: var(--app-text-main, #1B1F27);
+  --text-secondary: var(--app-text-secondary, rgba(27, 31, 39, 0.56));
+  --text-light: var(--app-text-tertiary, rgba(27, 31, 39, 0.38));
+
+  /* Legacy color aliases */
+  --dark-bg: #0a0a0f;
+  --light-bg: var(--app-bg, #FAFAFA);
+
+  /* Gradients — gradient-orange canonical is in index.css */
+  --gradient-blue: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+
+  /* App-local shadow tokens (refined, soft, layered) */
+  --app-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --app-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --app-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+
+  /* Border Radius (synced with index.css @theme) */
+  --app-radius-sm: 6px;
+  --app-radius-md: 8px;
+  --app-radius-lg: 12px;
+  --app-radius-xl: 16px;
+
+  /* Transitions (synced with index.css @theme) */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Variables */
+.dark-theme, .dark {
+  color-scheme: dark;
+  --text-primary: var(--app-text-main, #ECEEF2);
+  --text-secondary: var(--app-text-secondary, rgba(236, 238, 242, 0.58));
+  --text-light: var(--app-text-tertiary, rgba(236, 238, 242, 0.36));
+}
+
+.platform-layout {
+  background-color: var(--app-bg);
+}
+
+/* Platform sidebar polish */
+.platform-layout aside {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Platform sidebar nav items — smooth hover glow */
+.platform-layout .sidebar-item-active {
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.10) !important;
+}
+
+/* Platform topbar search — enhanced styling */
+.platform-layout header input[type="text"] {
+  border-radius: 14px !important;
+  transition: all 200ms ease;
+}
+
+.platform-layout header input[type="text"]:focus {
+  border-color: var(--primary-orange, #FF6B35) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.10);
+}
+
+/* Platform project tabs — smooth hover */
+.platform-layout .toolbar-scroll-hidden button {
+  transition: all 150ms ease;
+}
+
+/* Platform page wrapper — enhanced surface */
+.platform-layout .flex-1.flex.flex-col.overflow-y-auto {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Panel Utilities (Solid Colors) */
+.glass-panel {
+  background-color: var(--app-layer-surface);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow-md);
+}
+
+.dark .glass-panel {
+  background-color: var(--app-layer-surface);
+  border-color: var(--app-border);
+}
+
+.glass-card {
+  background-color: var(--app-layer-surface);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.dark .glass-card {
+  background-color: var(--app-layer-surface);
+  border-color: var(--app-border);
+}
+
+/* Platform: override landing GlassCard dark background so cards follow theme (light/dark/custom) */
+.platform-layout .glass-card {
+  background: var(--app-layer-surface) !important;
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow-sm);
+}
+
+.glass-card .text-app-main {
+  color: var(--app-text-main) !important;
+}
+.glass-card .text-app-secondary {
+  color: var(--app-text-secondary) !important;
+}
+
+.glass-card:hover {
+  box-shadow: var(--app-shadow-lg);
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Common Element Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hidden scrollbar for toolbar */
+.toolbar-scroll-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.toolbar-scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar Styles — subtle, muted */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--app-text-tertiary, rgba(27, 31, 39, 0.38));
+  border-radius: var(--app-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-text-secondary);
+}
+
+.dark-theme ::-webkit-scrollbar-track,
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Selection */
+::selection {
+  background: color-mix(in srgb, var(--app-accent) 20%, transparent);
+  color: var(--app-text-main);
+}

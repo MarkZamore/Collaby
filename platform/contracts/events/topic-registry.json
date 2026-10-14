@@ -1,0 +1,58 @@
+{
+  "requiredHeaders": [
+    "eventId",
+    "eventType",
+    "schemaVersion",
+    "sourceService",
+    "correlationId",
+    "causationId",
+    "occurredAtUtc"
+  ],
+  "topics": [
+    {
+      "name": "identity.user-lifecycle.v1",
+      "schema": "identity.user-lifecycle.v1.schema.json",
+      "dlq": "identity.user-lifecycle.v1.dlq"
+    },
+    {
+      "name": "identity.user-directory.v1",
+      "schema": "identity.user-directory.v1.schema.json",
+      "dlq": "identity.user-directory.v1.dlq"
+    },
+    {
+      "name": "user.profile-snapshot.v1",
+      "schema": "user.profile-snapshot.v1.schema.json",
+      "dlq": "user.profile-snapshot.v1.dlq"
+    },
+    {
+      "name": "management.task-events.v1",
+      "schema": "management.task-events.v1.schema.json",
+      "dlq": "management.task-events.v1.dlq"
+    },
+    {
+      "name": "management.workspace-events.v1",
+      "schema": "management.workspace-events.v1.schema.json",
+      "dlq": "management.workspace-events.v1.dlq"
+    },
+    {
+      "name": "management.project-progress-snapshot.v1",
+      "schema": "management.project-progress-snapshot.v1.schema.json",
+      "dlq": "management.project-progress-snapshot.v1.dlq"
+    },
+    {
+      "name": "gamification.progress-events.v1",
+      "schema": "gamification.progress-events.v1.schema.json",
+      "dlq": "gamification.progress-events.v1.dlq"
+    },
+    {
+      "name": "admin.user-deletion-commands.v1",
+      "schema": "admin.user-deletion-commands.v1.schema.json",
+      "dlq": "admin.user-deletion-commands.v1.dlq"
+    },
+    {
+      "name": "admin.user-deletion-results.v1",
+      "schema": "admin.user-deletion-results.v1.schema.json",
+      "dlq": "admin.user-deletion-results.v1.dlq"
+    }
+  ]
+}

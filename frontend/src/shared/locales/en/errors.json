@@ -1,0 +1,26 @@
+{
+  "generic": {
+    "loadProfile": "Failed to load profile",
+    "saveProfile": "Failed to save changes",
+    "completeOnboarding": "Failed to complete onboarding",
+    "loadApp": "Failed to load the app",
+    "noAccessToken": "No access token",
+    "invalidInput": "Invalid input",
+    "rateLimited": "Too many attempts. Please try again later.",
+    "tryAgain": "Please try again."
+  },
+  "auth": {
+    "invalidCredentials": "Invalid credentials",
+    "emailNotVerified": "Email is not verified. Check your inbox.",
+    "loginFailed": "Login failed",
+    "registerFailed": "Registration failed",
+    "logoutFailed": "Logout failed",
+    "loadCurrentUser": "Failed to get current user",
+    "checkNickname": "Failed to check nickname",
+    "parseResponse": "Failed to parse response",
+    "verificationFailed": "Verification failed",
+    "resendVerificationFailed": "Failed to resend verification email",
+    "loadUserProfile": "Failed to load user profile",
+    "saveUserProfile": "Failed to save user profile"
+  }
+}

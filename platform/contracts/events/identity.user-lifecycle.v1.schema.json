@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/identity.user-lifecycle.v1.schema.json",
+  "title": "identity.user-lifecycle.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "userId",
+    "lifecycleState",
+    "isActive",
+    "isSystemAdmin"
+  ],
+  "properties": {
+    "userId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "lifecycleState": {
+      "type": "string",
+      "enum": [
+        "activated",
+        "deactivated",
+        "delete-started",
+        "delete-completed"
+      ]
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "isSystemAdmin": {
+      "type": "boolean"
+    }
+  }
+}

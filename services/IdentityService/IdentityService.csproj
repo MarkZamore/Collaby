@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="Google.Apis.Auth" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.OpenApi" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="MongoDB.Driver" />
+    <PackageReference Include="StackExchange.Redis" />
+    <PackageReference Include="Otp.NET" />
+    <PackageReference Include="BCrypt.Net-Next" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="MailKit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="IdentityService.Tests/**/*.cs" />
+    <Content Remove="IdentityService.Tests/**" />
+    <EmbeddedResource Remove="IdentityService.Tests/**" />
+    <None Remove="IdentityService.Tests/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../platform/dotnet/Collaby.EventBus/Collaby.EventBus.csproj" />
+    <ProjectReference Include="../../platform/dotnet/Collaby.ServiceDefaults/Collaby.ServiceDefaults.csproj" />
+    <ProjectReference Include="../../platform/dotnet/Collaby.InternalContracts/Collaby.InternalContracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\platform\contracts\runtime\service-catalog.json">
+      <Link>service-catalog.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(COLLABY_HOST_WRAPPER_BUILD)' == 'true'">
+    <Content Update="appsettings*.json" CopyToPublishDirectory="Never" />
+    <None Update="appsettings*.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+
+</Project>

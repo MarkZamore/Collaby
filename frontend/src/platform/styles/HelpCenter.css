@@ -1,0 +1,207 @@
+/* Help Center Styles */
+.help-center-container {
+  padding: 24px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.help-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.help-title {
+  font-size: var(--type-3xl, 32px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: var(--gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.help-subtitle {
+  color: var(--app-text-secondary);
+  font-size: 16px;
+}
+
+.help-contact-button {
+  padding: 10px 20px;
+  font-size: var(--type-base, 14px);
+  font-weight: 600;
+  border-radius: var(--radius-full, 999px);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: var(--gradient-orange);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+  transition: transform var(--duration-fast) var(--ease-default), box-shadow var(--duration-fast) var(--ease-default);
+}
+
+.help-contact-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.28);
+}
+
+.help-search-container {
+  max-width: 600px;
+  margin: 0 auto 48px;
+  position: relative;
+}
+
+.help-search-input {
+  width: 100%;
+  padding: 16px 24px;
+  padding-left: 52px;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+  color: var(--app-text-main);
+  transition: all 0.3s ease;
+  box-shadow: var(--app-shadow-sm);
+}
+
+.help-search-input:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.help-search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--app-text-secondary);
+  pointer-events: none;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.help-card {
+  padding: 24px;
+  border-radius: var(--radius-xl, 16px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.help-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--app-shadow-md);
+  border-color: var(--primary-orange);
+}
+
+.help-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg, 12px);
+  background: rgba(255, 107, 53, 0.1);
+  color: var(--primary-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.help-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--app-text-main);
+  margin: 0;
+}
+
+.help-card-description {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--app-text-main);
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border-radius: var(--radius-lg, 12px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 20px 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--app-text-main);
+  text-align: left;
+}
+
+.faq-answer {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: var(--app-text-secondary);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  padding-bottom: 20px;
+  max-height: 500px;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark mode adjustments */
+.dark .help-search-input {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .help-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .faq-item {
+  background: rgba(255, 255, 255, 0.05);
+}

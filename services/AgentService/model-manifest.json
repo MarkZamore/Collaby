@@ -1,0 +1,21 @@
+{
+  "model": {
+    "id": "qwen2.5-1.5b-instruct-q5_k_m",
+    "displayName": "Qwen2.5-1.5B-Instruct GGUF",
+    "version": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "repository": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "filename": "qwen2.5-1.5b-instruct-q5_k_m.gguf",
+    "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q5_k_m.gguf?download=true",
+    "sha256": "b46661073c18e5b56a41fa320975f866a00def1ff08feef4718e013258896f8c",
+    "sizeBytes": 1285494304
+  },
+  "asr": {
+    "provider": "faster-whisper",
+    "modelSize": "small",
+    "languageSupport": "multilingual"
+  },
+  "embeddings": {
+    "provider": "keyword-relevance",
+    "modelName": "builtin-keyword-ranking"
+  }
+}

@@ -1,0 +1,99 @@
+/* GlassCard Component Styles */
+
+.public-page .glass-card {
+  background: var(--landing-card-bg, rgba(255, 255, 255, 0.8));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--landing-card-border, rgba(0, 0, 0, 0.06));
+  border-radius: var(--radius-xl, 16px);
+  box-shadow: var(--landing-shadow-md, 0 4px 16px rgba(0, 0, 0, 0.06));
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gloss effect overlay */
+.public-page .glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* Hover variant */
+.public-page .glass-card-hover {
+  cursor: pointer;
+}
+
+.public-page .glass-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--landing-shadow-lg, 0 12px 40px rgba(0, 0, 0, 0.08));
+  border-color: rgba(255, 107, 53, 0.16);
+}
+
+.public-page .glass-card-hover:hover::before {
+  opacity: 1;
+}
+
+/* Active state */
+.public-page .glass-card-hover:active {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Focus state for accessibility */
+.public-page .glass-card:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 2px;
+}
+
+/* Variants */
+.public-page .glass-card.featured {
+  border: 1.5px solid var(--primary-orange);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.12);
+  background: var(--landing-card-bg, rgba(255, 255, 255, 0.8));
+}
+
+.public-page .glass-card.minimal {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.public-page .glass-card.dark {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .public-page .glass-card {
+    border-radius: var(--radius-lg, 12px);
+  }
+}
+
+/* Performance optimization */
+.public-page .glass-card {
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .public-page .glass-card,
+  .public-page .glass-card-hover:hover {
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,73 @@
+/* ImagePlaceholder Styles */
+
+.public-page .image-placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 160, 86, 0.05) 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.public-page .image-placeholder svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.public-page .image-placeholder:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(255, 160, 86, 0.08) 100%);
+  transform: scale(1.02);
+}
+
+.public-page .placeholder-label {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF6B35;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.public-page .image-placeholder:hover .placeholder-label {
+  opacity: 1;
+}
+
+/* Animation for SVG elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.public-page .image-placeholder svg g {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .public-page .image-placeholder {
+    border-radius: 12px;
+  }
+  
+  .public-page .placeholder-label {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+}

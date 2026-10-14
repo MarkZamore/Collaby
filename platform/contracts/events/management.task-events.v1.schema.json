@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/management.task-events.v1.schema.json",
+  "title": "management.task-events.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workspaceId",
+    "projectId",
+    "taskId",
+    "actorUserId",
+    "eventName"
+  ],
+  "properties": {
+    "workspaceId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "projectId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "taskId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "actorUserId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "eventName": {
+      "type": "string",
+      "enum": [
+        "task-completed",
+        "task-reopened",
+        "subtask-completed",
+        "comment-added"
+      ]
+    },
+    "priority": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

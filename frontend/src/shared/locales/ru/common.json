@@ -1,0 +1,63 @@
+{
+  "appName": "Collaby",
+  "actions": {
+    "logout": "Выйти",
+    "loggingOut": "Выход...",
+    "login": "Войти",
+    "register": "Открыть прототип",
+    "save": "Сохранить изменения",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "retry": "Повторить",
+    "customize": "Настроить",
+    "sendDemo": "Отправить письмо",
+    "openPrototype": "Открыть прототип",
+    "learnMore": "О проекте",
+    "contactTeam": "Контакты команды",
+    "back": "Назад",
+    "next": "Далее",
+    "finish": "Завершить"
+  },
+  "theme": {
+    "light": "Светлая",
+    "dark": "Тёмная",
+    "system": "Системная",
+    "toggleToLight": "Включить светлую тему",
+    "toggleToDark": "Включить тёмную тему"
+  },
+  "language": {
+    "label": "Язык",
+    "en": "EN",
+    "ru": "RU",
+    "kk": "KZ"
+  },
+  "status": {
+    "loading": "Загрузка...",
+    "saving": "Сохранение...",
+    "ready": "Готово"
+  },
+  "labels": {
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "name": "Имя",
+    "username": "Никнейм",
+    "subject": "Тема",
+    "message": "Сообщение",
+    "timezone": "Часовой пояс",
+    "bio": "О себе",
+    "avatarUrl": "URL аватара",
+    "displayName": "Отображаемое имя"
+  },
+  "nav": {
+    "about": "О проекте",
+    "features": "Возможности",
+    "progress": "Этапы",
+    "benefits": "Что уже есть",
+    "contact": "Контакты",
+    "documents": "Документы",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия",
+    "cookies": "Файлы cookie"
+  }
+}

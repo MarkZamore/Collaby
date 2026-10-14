@@ -1,0 +1,51 @@
+# IDE и локальные настройки
+.claude/
+.playwright-mcp/
+.idea/
+.vs/
+.vscode/
+*.DotSettings.user
+*.sln.docstates
+*.suo
+*.lscache
+*.user
+*.userosscache
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Локальные env и секреты
+.env
+.env.local
+.env.*.local
+appsettings.*.local.json
+secrets.json
+
+# Артефакты сборки и тестов
+**/bin/
+**/build/
+**/coverage/
+**/dist/
+**/logs/
+**/node_modules/
+**/obj/
+**/TestResults/
+**/__pycache__/
+**/.coverage
+**/.coverage.*
+**/*.log
+*.nupkg
+*.pyc
+*.snupkg
+
+# Локальные runtime и QA-артефакты
+.tools/
+ci-reports/
+cloudflare/.terraform/
+output/
+panels/panel-credentials.local.md
+qa-artifacts/
+
+.local/
+*.tfstate*

@@ -1,0 +1,112 @@
+/* AnimatedBackground Component Styles */
+
+.public-page .liquid-shapes-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.public-page .liquid-shape {
+  position: absolute;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 50%, #FFA056 100%);
+  opacity: 0.15;
+  filter: blur(60px);
+  animation: liquidMove 20s infinite ease-in-out;
+}
+
+/* Shape Variants */
+.public-page .liquid-shape.shape-1 {
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  left: -200px;
+  animation-duration: 25s;
+}
+
+.public-page .liquid-shape.shape-2 {
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  right: -300px;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+.public-page .liquid-shape.shape-3 {
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  left: 20%;
+  animation-duration: 35s;
+  animation-delay: -20s;
+}
+
+.public-page .liquid-shape.shape-4 {
+  width: 450px;
+  height: 450px;
+  top: 30%;
+  left: 50%;
+  animation-duration: 28s;
+  animation-delay: -5s;
+}
+
+.public-page .liquid-shape.shape-5 {
+  width: 350px;
+  height: 350px;
+  bottom: 20%;
+  right: 10%;
+  animation-duration: 32s;
+  animation-delay: -15s;
+}
+
+/* Variant Styles */
+.public-page .liquid-shape.variant-hero {
+  opacity: 0.2;
+  filter: blur(80px);
+}
+
+.public-page .liquid-shape.variant-minimal {
+  opacity: 0.08;
+  filter: blur(40px);
+}
+
+/* Animation */
+@keyframes liquidMove {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  25% {
+    transform: translate(50px, 100px) rotate(90deg) scale(1.1);
+    border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+  }
+  50% {
+    transform: translate(100px, 50px) rotate(180deg) scale(0.9);
+    border-radius: 70% 30% 50% 50% / 60% 40% 60% 40%;
+  }
+  75% {
+    transform: translate(30px, -50px) rotate(270deg) scale(1.05);
+    border-radius: 30% 70% 40% 60% / 50% 50% 50% 50%;
+  }
+}
+
+/* Performance optimization */
+.public-page .liquid-shape {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .public-page .liquid-shape {
+    animation: none;
+    opacity: 0.1;
+  }
+}

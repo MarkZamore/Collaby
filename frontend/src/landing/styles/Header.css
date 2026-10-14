@@ -1,0 +1,29 @@
+/* ============================================
+   HEADER COMPONENT - Wrapper for Navbar
+   ============================================ */
+
+.public-page .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrolled state - ��������� ������� */
+.public-page .header.scrolled {
+  padding: 8px 20px;
+}
+
+/* �� ��������� scrolled �� ������ */
+@media (max-width: 768px) {
+  .public-page .header {
+    padding: 12px 16px;
+  }
+
+  .public-page .header.scrolled {
+    padding: 12px 16px;
+  }
+}

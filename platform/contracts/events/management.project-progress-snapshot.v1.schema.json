@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/management.project-progress-snapshot.v1.schema.json",
+  "title": "management.project-progress-snapshot.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "projectId",
+    "progressPercent",
+    "totalWeight",
+    "completedWeight",
+    "totalTasks",
+    "completedTasks",
+    "totalSubtasks",
+    "completedSubtasks",
+    "updatedAtUtc"
+  ],
+  "properties": {
+    "projectId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "progressPercent": {
+      "type": "number"
+    },
+    "totalWeight": {
+      "type": "number"
+    },
+    "completedWeight": {
+      "type": "number"
+    },
+    "totalTasks": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completedTasks": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "totalSubtasks": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completedSubtasks": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "updatedAtUtc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

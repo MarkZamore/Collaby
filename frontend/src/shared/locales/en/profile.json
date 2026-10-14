@@ -1,0 +1,112 @@
+{
+  "tabs": {
+    "personal": "Personal",
+    "skills": "Skills",
+    "background": "Board background",
+    "preferences": "Settings"
+  },
+  "toast": {
+    "saved": "Changes saved",
+    "onboardingCompleted": "Onboarding marked as completed",
+    "loadError": "Failed to load profile"
+  },
+  "cards": {
+    "profile": "My profile"
+  },
+  "buttons": {
+    "completeOnboarding": "Complete onboarding"
+  },
+  "activity": {
+    "label": "Activity",
+    "noData": "no data"
+  },
+  "skills": {
+    "overallLevel": "Overall level"
+  },
+  "background": {
+    "title": "Default board background",
+    "description": "Choose your personal default board background. Individual board settings can temporarily override it."
+  },
+  "notifications": {
+    "email": "Email notifications",
+    "push": "Push notifications",
+    "weekly": "Weekly digest"
+  },
+  "onboarding": {
+    "title": "Onboarding",
+    "status": "Status",
+    "step": "Current step",
+    "help": "Track the onboarding status and the latest completed step for your account.",
+    "completed": "Completed",
+    "notCompleted": "not completed"
+  },
+  "statusOptions": {
+    "not_started": "Not started",
+    "in_progress": "In progress",
+    "completed": "Completed"
+  },
+  "personal": {
+    "title": "Personal profile",
+    "description": "These values are saved in your account and restored after sign-in.",
+    "displayNameHelp": "Shown in the interface and on your profile.",
+    "avatarHelp": "Paste a full HTTP or HTTPS image URL.",
+    "bioHelp": "A short description for your teammates.",
+    "timezoneHelp": "Used in date and activity formatting.",
+    "languageHelp": "This language becomes the website language after sign-in."
+  },
+  "preferences": {
+    "title": "Interface settings",
+    "description": "Choose how the website looks on this device and in your account.",
+    "themeLabel": "Theme",
+    "languageLabel": "Language",
+    "logoutDescription": "Log out on this device without changing your saved profile settings.",
+    "lastActive": "Last active",
+    "neverActive": "No activity yet"
+  },
+  "form": {
+    "email": "Email",
+    "displayName": "Display name",
+    "timezone": "Time zone",
+    "language": "Language",
+    "avatarUrl": "Avatar URL",
+    "bio": "Bio",
+    "save": "Save changes",
+    "cancel": "Cancel",
+    "saving": "Saving..."
+  },
+  "messages": {
+    "profileImageAlt": "Profile",
+    "loading": "Loading profile..."
+  },
+  "interface": {
+    "title": "Interface and theme",
+    "description": "These settings change how the website looks for you and are synced to your account.",
+    "themeLabel": "Theme mode",
+    "languageLabel": "Language",
+    "generalTitle": "General",
+    "homeView": "Default home view",
+    "homeViewDescription": "Select what you want to see first after opening Collaby.",
+    "displayNames": "Display names",
+    "displayNamesDescription": "Choose how names should appear in the interface.",
+    "appSidebar": "App sidebar",
+    "appSidebarDescription": "Sidebar customization is available in a future update.",
+    "fontSize": "Font size",
+    "fontSizeDescription": "Adjust text density across the app.",
+    "themeDescription": "Choose between light, dark, or system mode. Custom color themes are no longer used.",
+    "contrastLabel": "Border contrast (opacity)",
+    "views": {
+      "allIssues": "All issues",
+      "myTasks": "My tasks",
+      "dashboard": "Dashboard"
+    },
+    "names": {
+      "fullName": "Full name",
+      "username": "Username"
+    },
+    "fontSizes": {
+      "default": "Default",
+      "compact": "Compact",
+      "large": "Large"
+    }
+  }
+}

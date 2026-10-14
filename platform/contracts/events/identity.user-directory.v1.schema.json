@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/identity.user-directory.v1.schema.json",
+  "title": "identity.user-directory.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "userId",
+    "username",
+    "email",
+    "isActive",
+    "isSystemAdmin",
+    "lifecycleState"
+  ],
+  "properties": {
+    "userId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "username": {
+      "type": "string",
+      "minLength": 1
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "isSystemAdmin": {
+      "type": "boolean"
+    },
+    "lifecycleState": {
+      "type": "string",
+      "enum": [
+        "activated",
+        "deactivated",
+        "delete-started",
+        "delete-completed"
+      ]
+    }
+  }
+}

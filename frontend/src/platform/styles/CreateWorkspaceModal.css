@@ -1,0 +1,430 @@
+/* ============================================
+   CREATE WORKSPACE MODAL
+   ============================================ */
+
+.workspace-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.workspace-modal {
+  background: var(--app-layer-overlay);
+  color: var(--app-text-main);
+  border: 1px solid var(--app-layer-border);
+  border-radius: var(--radius-xl, 16px);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: var(--shadow-overlay, 0 24px 64px rgba(0, 0, 0, 0.16));
+  animation: workspaceModalIn 0.3s ease-out;
+}
+
+/* Clear legacy dark theme overrides as vars handle it */
+.dark-theme .workspace-modal,
+.dark .workspace-modal {
+  background: var(--app-layer-overlay);
+  border: 1px solid var(--app-layer-border);
+}
+
+@keyframes workspaceModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+.workspace-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--app-layer-border);
+}
+
+.dark-theme .workspace-modal-header,
+.dark .workspace-modal-header {
+  border-bottom-color: var(--app-layer-border);
+}
+
+.workspace-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--app-text-main);
+}
+
+.dark-theme .workspace-modal-brand,
+.dark .workspace-modal-brand {
+  color: var(--app-text-main);
+}
+
+.workspace-modal-icon {
+  font-size: 22px;
+}
+
+.workspace-modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md, 8px);
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast, 150ms) var(--ease-default, ease);
+}
+
+.workspace-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--app-text-main);
+}
+
+.dark-theme .workspace-modal-close,
+.dark .workspace-modal-close {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .workspace-modal-close:hover,
+.dark .workspace-modal-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Content */
+.workspace-modal-content {
+  padding: 32px 24px;
+}
+
+.workspace-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--app-text-main);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.dark-theme .workspace-modal-title,
+.dark .workspace-modal-title {
+  color: #fff;
+}
+
+.workspace-modal-subtitle {
+  font-size: 14px;
+  color: var(--app-text-secondary);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.dark-theme .workspace-modal-subtitle,
+.dark .workspace-modal-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Options Grid - Cards */
+.workspace-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.workspace-options-grid.multi {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.workspace-option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px;
+  border-radius: var(--radius-lg, 12px);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--duration-fast, 150ms) var(--ease-default, ease);
+}
+
+.workspace-option-card:hover {
+  border-color: var(--primary-orange);
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.workspace-option-card.selected {
+  border-color: var(--primary-orange);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.dark-theme .workspace-option-card,
+.dark .workspace-option-card {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-theme .workspace-option-card:hover,
+.dark .workspace-option-card:hover {
+  border-color: var(--primary-orange);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.workspace-option-icon {
+  font-size: 28px;
+}
+
+.workspace-option-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--app-text-main);
+}
+
+.dark-theme .workspace-option-label,
+.dark .workspace-option-label {
+  color: #fff;
+}
+
+/* Option Pills */
+.workspace-option-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md, 8px);
+  border: 2px solid var(--app-border, rgba(0, 0, 0, 0.07));
+  background: transparent;
+  color: var(--app-text-main);
+  font-size: var(--type-sm, 13px);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--duration-fast, 150ms) var(--ease-default, ease);
+}
+
+.workspace-option-pill:hover {
+  border-color: var(--primary-orange);
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.workspace-option-pill.selected {
+  border-color: var(--primary-orange);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
+  color: white;
+}
+
+.dark-theme .workspace-option-pill,
+.dark .workspace-option-pill {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.dark-theme .workspace-option-pill:hover,
+.dark .workspace-option-pill:hover {
+  border-color: var(--primary-orange);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+/* Name Input */
+.workspace-name-input {
+  max-width: 100%;
+}
+
+.workspace-name-input input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--radius-lg, 12px);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  font-size: 16px;
+  color: var(--app-text-main);
+  outline: none;
+  transition: all var(--duration-fast, 150ms) var(--ease-default, ease);
+}
+
+.workspace-name-input input:focus {
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.dark-theme .workspace-name-input input,
+.dark .workspace-name-input input {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.dark-theme .workspace-name-input input::placeholder,
+.dark .workspace-name-input input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Progress */
+.workspace-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin-bottom: 16px;
+}
+
+.workspace-progress-steps {
+  display: flex;
+  gap: 8px;
+}
+
+.workspace-progress-step {
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.workspace-progress-step.active {
+  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+}
+
+.workspace-progress-step.completed {
+  background: var(--primary-orange);
+}
+
+.dark-theme .workspace-progress-step,
+.dark .workspace-progress-step {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.workspace-progress-text {
+  font-size: 12px;
+  color: var(--app-text-secondary);
+  font-weight: 500;
+}
+
+.dark-theme .workspace-progress-text,
+.dark .workspace-progress-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Footer */
+.workspace-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 24px;
+}
+
+.workspace-btn-back,
+.workspace-btn-cancel {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: var(--app-text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--duration-fast, 150ms) var(--ease-default, ease);
+}
+
+.workspace-btn-back:hover,
+.workspace-btn-cancel:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--app-text-main);
+}
+
+.dark-theme .workspace-btn-back,
+.dark-theme .workspace-btn-cancel,
+.dark .workspace-btn-back,
+.dark .workspace-btn-cancel {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .workspace-btn-back:hover,
+.dark-theme .workspace-btn-cancel:hover,
+.dark .workspace-btn-back:hover,
+.dark .workspace-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.workspace-btn-next {
+  padding: 12px 28px;
+  border-radius: var(--radius-md, 8px);
+  border: none;
+  background: var(--gradient-orange);
+  color: white;
+  font-size: var(--type-md, 15px);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--duration-fast, 150ms) var(--ease-default, ease);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.24);
+}
+
+.workspace-btn-next:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.32);
+}
+
+.workspace-btn-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .workspace-modal {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  .workspace-modal-header {
+    padding: 16px 20px;
+  }
+
+  .workspace-modal-content {
+    padding: 24px 20px;
+  }
+
+  .workspace-modal-title {
+    font-size: 18px;
+  }
+
+  .workspace-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace-options-grid.multi {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workspace-option-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .workspace-modal-footer {
+    padding: 16px 20px 20px;
+  }
+}

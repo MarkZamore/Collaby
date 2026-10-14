@@ -1,0 +1,7 @@
+ARG MONGODB_BASE_IMAGE=mongo:7@sha256:adfc10cca964f99224ac4948e782c260c4c87e71958df334e8ca882ff85062ea
+
+FROM ${MONGODB_BASE_IMAGE}
+
+COPY ./01-init.js /docker-entrypoint-initdb.d/
+
+EXPOSE 27017

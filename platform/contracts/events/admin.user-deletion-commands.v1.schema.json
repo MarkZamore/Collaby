@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/admin.user-deletion-commands.v1.schema.json",
+  "title": "admin.user-deletion-commands.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "operationId",
+    "userId",
+    "targetService",
+    "requestedBy"
+  ],
+  "properties": {
+    "operationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "userId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "targetService": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requestedBy": {
+      "type": "string",
+      "format": "email"
+    }
+  }
+}

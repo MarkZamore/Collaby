@@ -1,0 +1,368 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: collaby
+  labels:
+    app.kubernetes.io/part-of: collaby
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: collaby-system
+  labels:
+    app.kubernetes.io/part-of: collaby
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: portainer
+  labels:
+    app.kubernetes.io/part-of: collaby
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: controller
+  namespace: collaby-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: controller
+  namespace: collaby
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - services
+  - configmaps
+  - secrets
+  - persistentvolumeclaims
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update
+  - delete
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - statefulsets
+  - daemonsets
+  - replicasets
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update
+  - delete
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update
+  - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: controller
+  namespace: collaby
+subjects:
+- kind: ServiceAccount
+  name: controller
+  namespace: collaby-system
+roleRef:
+  kind: Role
+  name: controller
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: workspace
+  namespace: collaby
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: restart-applications
+  namespace: collaby
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  resourceNames:
+  - access
+  - workspace
+  - realtime
+  - engagement
+  - assistant
+  verbs:
+  - get
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: restart-applications
+  namespace: collaby
+subjects:
+- kind: ServiceAccount
+  name: workspace
+  namespace: collaby
+roleRef:
+  kind: Role
+  name: restart-applications
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: alloy
+  namespace: collaby
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: read-pod-logs
+  namespace: collaby
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - pods
+  - pods/log
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pod-logs
+  namespace: collaby
+subjects:
+- kind: ServiceAccount
+  name: alloy
+  namespace: collaby
+roleRef:
+  kind: Role
+  name: read-pod-logs
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: read-pod-logs
+  namespace: collaby-system
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - pods
+  - pods/log
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pod-logs
+  namespace: collaby-system
+subjects:
+- kind: ServiceAccount
+  name: alloy
+  namespace: collaby
+roleRef:
+  kind: Role
+  name: read-pod-logs
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: portainer
+  namespace: portainer
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: collaby-portainer
+subjects:
+- kind: ServiceAccount
+  name: portainer
+  namespace: portainer
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: netdata
+  namespace: collaby
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: collaby-netdata
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - nodes
+  - nodes/proxy
+  - pods
+  - services
+  - endpoints
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  - cronjobs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - replicasets
+  - statefulsets
+  - daemonsets
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: collaby-netdata
+subjects:
+- kind: ServiceAccount
+  name: netdata
+  namespace: collaby
+roleRef:
+  kind: ClusterRole
+  name: collaby-netdata
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: controller
+  namespace: portainer
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - services
+  - configmaps
+  - secrets
+  - persistentvolumeclaims
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update
+  - delete
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - statefulsets
+  - daemonsets
+  - replicasets
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update
+  - delete
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update
+  - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: controller
+  namespace: portainer
+subjects:
+- kind: ServiceAccount
+  name: controller
+  namespace: collaby-system
+roleRef:
+  kind: Role
+  name: controller
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: read-pod-logs
+  namespace: portainer
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - pods
+  - pods/log
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pod-logs
+  namespace: portainer
+subjects:
+- kind: ServiceAccount
+  name: alloy
+  namespace: collaby
+roleRef:
+  kind: Role
+  name: read-pod-logs
+  apiGroup: rbac.authorization.k8s.io

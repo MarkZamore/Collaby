@@ -1,0 +1,12 @@
+Add your sound files to this folder with exactly these names:
+
+- ringtone.mp3
+- call-ended.mp3
+- mic-muted.mp3
+- mic-unmuted.mp3
+- camera-on.mp3
+- camera-off.mp3
+
+Notes:
+- Use short files for UI responsiveness.
+- mp3 format is expected by the frontend sound player.

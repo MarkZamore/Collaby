@@ -1,0 +1,103 @@
+/* ScrollReveal Animations */
+
+.public-page .scroll-reveal {
+  opacity: 0;
+  transition: all var(--reveal-duration, 600ms) ease-out var(--reveal-delay, 0ms);
+}
+
+.public-page .scroll-reveal.is-visible {
+  opacity: 1;
+}
+
+/* Fade Animation */
+.public-page .scroll-reveal-fade {
+  opacity: 0;
+}
+
+.public-page .scroll-reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* Slide Up Animation */
+.public-page .scroll-reveal-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.public-page .scroll-reveal-slide-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide Left Animation */
+.public-page .scroll-reveal-slide-left {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.public-page .scroll-reveal-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide Right Animation */
+.public-page .scroll-reveal-slide-right {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.public-page .scroll-reveal-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale Animation */
+.public-page .scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.public-page .scroll-reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Rotate Animation */
+.public-page .scroll-reveal-rotate {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.9);
+}
+
+.public-page .scroll-reveal-rotate.is-visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Slide + Scale Combined */
+.public-page .scroll-reveal-slide-scale {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+.public-page .scroll-reveal-slide-scale.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Performance optimization */
+.public-page .scroll-reveal {
+  will-change: transform, opacity;
+}
+
+.public-page .scroll-reveal.is-visible {
+  will-change: auto;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .public-page .scroll-reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

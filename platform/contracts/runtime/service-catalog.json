@@ -1,0 +1,453 @@
+{
+  "services": [
+    {
+      "composeService": "postgres",
+      "owner": "platform-postgres",
+      "kind": "stateful",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "mongo-db",
+      "owner": "platform-mongo",
+      "kind": "stateful",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "cache",
+      "owner": "platform-cache",
+      "kind": "stateful",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "events",
+      "owner": "platform-events",
+      "kind": "stateful",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "access",
+      "owner": "access-service",
+      "kind": "application",
+      "telemetryServiceName": "access-service",
+      "profiles": [],
+      "directReadinessUrl": "http://access:5001/health/ready",
+      "gatewaySmokeUrl": "http://frontend:80/api/auth/health/ready",
+      "stateOwnershipMode": "stateful",
+      "ownedStateUnits": [
+        "identity-postgres",
+        "users-postgres",
+        "identity-mongo",
+        "identity-cache"
+      ],
+      "containedModules": [
+        "identity-service",
+        "user-service"
+      ],
+      "syncDependencies": [],
+      "eventProducers": [
+        "identity.user-lifecycle.v1",
+        "identity.user-directory.v1",
+        "admin.user-deletion-commands.v1",
+        "user.profile-snapshot.v1",
+        "admin.user-deletion-results.v1"
+      ],
+      "eventConsumers": [
+        "admin.user-deletion-results.v1",
+        "user.profile-snapshot.v1",
+        "identity.user-directory.v1",
+        "identity.user-lifecycle.v1",
+        "admin.user-deletion-commands.v1"
+      ],
+      "publicSurface": [
+        "/api/auth/*",
+        "/api/users/*",
+        "/internal/v1/queries/users/*",
+        "/swagger/*"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "workspace",
+      "owner": "workspace-service",
+      "kind": "application",
+      "telemetryServiceName": "workspace-service",
+      "profiles": [],
+      "directReadinessUrl": "http://workspace:5003/health/ready",
+      "gatewaySmokeUrl": "http://frontend:80/api/management/health/ready",
+      "stateOwnershipMode": "stateful",
+      "ownedStateUnits": [
+        "management-postgres",
+        "analytics-postgres",
+        "management-cache"
+      ],
+      "containedModules": [
+        "management-service",
+        "analytics-service"
+      ],
+      "syncDependencies": [
+        "access"
+      ],
+      "eventProducers": [
+        "management.task-events.v1",
+        "management.workspace-events.v1",
+        "management.project-progress-snapshot.v1",
+        "admin.user-deletion-results.v1"
+      ],
+      "eventConsumers": [
+        "user.profile-snapshot.v1",
+        "management.task-events.v1",
+        "gamification.progress-events.v1",
+        "admin.user-deletion-commands.v1"
+      ],
+      "publicSurface": [
+        "/api/management/*",
+        "/api/management/hubs/workspace",
+        "/api/analytics/*",
+        "/internal/v1/queries/projects/*",
+        "/swagger/*"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "realtime",
+      "owner": "realtime-service",
+      "kind": "application",
+      "telemetryServiceName": "realtime-service",
+      "profiles": [],
+      "directReadinessUrl": "http://realtime:5004/health/ready",
+      "gatewaySmokeUrl": "http://frontend:80/api/messenger/health/ready",
+      "stateOwnershipMode": "stateful",
+      "ownedStateUnits": [
+        "messenger-mongo",
+        "messenger-cache",
+        "calls-mongo",
+        "calls-cache"
+      ],
+      "containedModules": [
+        "messenger-service",
+        "call-service"
+      ],
+      "syncDependencies": [
+        "access"
+      ],
+      "eventProducers": [
+        "admin.user-deletion-results.v1"
+      ],
+      "eventConsumers": [
+        "user.profile-snapshot.v1",
+        "admin.user-deletion-commands.v1"
+      ],
+      "publicSurface": [
+        "/api/messenger/*",
+        "/api/messenger/hubs/chat",
+        "/api/calls/*",
+        "/api/calls/hubs/call",
+        "/swagger/*"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "engagement",
+      "owner": "gamification-service",
+      "kind": "application",
+      "telemetryServiceName": "gamification-service",
+      "profiles": [],
+      "directReadinessUrl": "http://engagement:5006/api/gamification/health/ready",
+      "gatewaySmokeUrl": "http://frontend:80/api/gamification/health/ready",
+      "stateOwnershipMode": "stateful",
+      "ownedStateUnits": [
+        "gamification-postgres",
+        "gamification-mongo",
+        "gamification-cache"
+      ],
+      "containedModules": [
+        "gamification-service"
+      ],
+      "syncDependencies": [
+        "access",
+        "workspace"
+      ],
+      "eventProducers": [
+        "gamification.progress-events.v1",
+        "admin.user-deletion-results.v1"
+      ],
+      "eventConsumers": [
+        "management.task-events.v1",
+        "management.project-progress-snapshot.v1",
+        "user.profile-snapshot.v1",
+        "admin.user-deletion-commands.v1"
+      ],
+      "publicSurface": [
+        "/api/gamification/*",
+        "/swagger/*"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "assistant",
+      "owner": "ai-agent",
+      "kind": "application",
+      "telemetryServiceName": "ai-agent",
+      "profiles": [],
+      "directReadinessUrl": "http://assistant:8100/api/ai/health",
+      "gatewaySmokeUrl": "http://frontend:80/api/ai/health",
+      "stateOwnershipMode": "stateful",
+      "ownedStateUnits": [
+        "ai-state"
+      ],
+      "containedModules": [
+        "ai-agent"
+      ],
+      "syncDependencies": [
+        "workspace",
+        "access"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "/api/ai/*",
+        "/swagger/*"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "frontend",
+      "owner": "frontend",
+      "kind": "edge",
+      "telemetryServiceName": "frontend",
+      "profiles": [],
+      "directReadinessUrl": "http://frontend:80/healthz",
+      "gatewaySmokeUrl": "http://frontend:80/healthz",
+      "ownedStateUnits": [],
+      "containedModules": [
+        "frontend"
+      ],
+      "syncDependencies": [
+        "access",
+        "workspace",
+        "realtime",
+        "engagement",
+        "assistant"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:8080",
+        "/api/*",
+        "/admin",
+        "/swagger"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "mongo",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "mongo-db"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:8081"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "pg",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "postgres"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:5050"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "redis",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "cache"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:5540"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "portainer",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:9000"
+      ],
+      "kubernetesNamespace": "portainer"
+    },
+    {
+      "composeService": "loki",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "tempo",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "otel",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "tempo"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "prometheus",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "otel"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "grafana",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "loki",
+        "tempo",
+        "prometheus"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:3001"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "server",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:19999"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "kafka",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "profiles": [],
+      "ownedStateUnits": [],
+      "syncDependencies": [
+        "events"
+      ],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:8082"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "mailpit",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [
+        "http://localhost:8025"
+      ],
+      "kubernetesNamespace": "collaby"
+    },
+    {
+      "composeService": "alloy",
+      "owner": "platform-ops",
+      "kind": "panel",
+      "ownedStateUnits": [],
+      "syncDependencies": [],
+      "eventProducers": [],
+      "eventConsumers": [],
+      "publicSurface": [],
+      "kubernetesNamespace": "collaby"
+    }
+  ]
+}

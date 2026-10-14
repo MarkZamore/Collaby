@@ -1,0 +1,24 @@
+<Solution>
+  <Project Path="services/AnalyticsService/AnalyticsService.csproj" />
+  <Project Path="services/AnalyticsService/AnalyticsService.Tests/AnalyticsService.Tests.csproj" />
+  <Project Path="platform/dotnet/Collaby.ServiceDefaults/Collaby.ServiceDefaults.csproj" />
+  <Project Path="platform/dotnet/Collaby.InternalContracts/Collaby.InternalContracts.csproj" />
+  <Folder Name="/services/">
+    <Project Path="services/AccessHost/AccessHost.csproj" />
+    <Project Path="services/RealtimeHost/RealtimeHost.csproj" />
+    <Project Path="services/WorkspaceHost/WorkspaceHost.csproj" />
+  </Folder>
+  <Project Path="platform/dotnet/Collaby.EventBus/Collaby.EventBus.csproj" />
+  <Project Path="services/MessengerService/MessengerService.csproj" />
+  <Project Path="services/MessengerService/MessengerService.Tests/MessengerService.Tests.csproj" />
+  <Project Path="services/CallService/CallService.csproj" />
+  <Project Path="services/CallService/CallService.Tests/CallService.Tests.csproj" />
+  <Project Path="services/GamificationService/GamificationService.csproj" />
+  <Project Path="services/GamificationService/GamificationService.Tests/GamificationService.Tests.csproj" />
+  <Project Path="services/IdentityService/IdentityService.csproj" />
+  <Project Path="services/IdentityService/IdentityService.Tests/IdentityService.Tests.csproj" />
+  <Project Path="services/UserService/UserService.csproj" />
+  <Project Path="services/UserService/UserService.Tests/UserService.Tests.csproj" />
+  <Project Path="services/ManagementService/ManagementService.csproj" />
+  <Project Path="services/ManagementService/ManagementService.Tests/ManagementService.Tests.csproj" />
+</Solution>

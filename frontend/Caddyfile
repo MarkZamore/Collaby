@@ -1,0 +1,61 @@
+:80 {
+    encode zstd gzip
+    root * /srv
+    route {
+        respond /healthz "healthy\n" 200
+        @auth path /api/auth /api/auth/* /api/users /api/users/*
+        reverse_proxy @auth access:5001
+        @workspace path /api/management /api/management/* /api/analytics /api/analytics/* /api/work/hubs/workspace /api/work/hubs/workspace/*
+        reverse_proxy @workspace workspace:5003
+        @realtime path /api/messenger /api/messenger/* /api/calls /api/calls/*
+        reverse_proxy @realtime realtime:5004
+        @engagement path /api/gamification /api/gamification/*
+        reverse_proxy @engagement engagement:5006
+        @assistant path /api/ai /api/ai/*
+        reverse_proxy @assistant assistant:8100
+        redir /swagger /swagger/ 308
+        handle_path /swagger/access/* {
+            reverse_proxy access:5001
+        }
+        handle_path /swagger/workspace/* {
+            reverse_proxy workspace:5003
+        }
+        handle_path /swagger/realtime/* {
+            reverse_proxy realtime:5004
+        }
+        handle_path /swagger/engagement/* {
+            reverse_proxy engagement:5006
+        }
+        handle_path /swagger/assistant/* {
+            reverse_proxy assistant:8100
+        }
+        handle /swagger/v1/swagger.json {
+            reverse_proxy assistant:8100
+        }
+        handle_path /swagger/* {
+            root * /srv/swagger
+            file_server
+        }
+        @assets {
+            path /assets/*
+            file
+        }
+        handle @assets {
+            header Cache-Control "public, max-age=31536000, immutable"
+            file_server
+        }
+        handle /assets/* {
+            header Cache-Control "no-store"
+            respond 404
+        }
+        handle /runtime-version.json {
+            header Cache-Control "no-store"
+            file_server
+        }
+        handle {
+            header Cache-Control "no-store"
+            try_files {path} /index.html
+            file_server
+        }
+    }
+}

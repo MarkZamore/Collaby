@@ -1,0 +1,62 @@
+/* AnimatedCounter Styles */
+
+.public-page .animated-counter {
+  padding: 16px 24px;
+  border-radius: 16px;
+  text-align: center;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.public-page .animated-counter:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.2);
+}
+
+.public-page .counter-value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+  transition: transform 0.3s ease;
+}
+
+.public-page .animated-counter:hover .counter-value {
+  transform: scale(1.1);
+}
+
+.public-page .counter-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.public-page .counter-value {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .public-page .animated-counter {
+    min-width: 100px;
+    padding: 12px 20px;
+  }
+
+  .public-page .counter-value {
+    font-size: 28px;
+  }
+
+  .public-page .counter-label {
+    font-size: 12px;
+  }
+}

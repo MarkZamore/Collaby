@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaby.local/contracts/events/management.workspace-events.v1.schema.json",
+  "title": "management.workspace-events.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workspaceId",
+    "ownerUserId",
+    "eventName",
+    "memberCount"
+  ],
+  "properties": {
+    "workspaceId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "ownerUserId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "eventName": {
+      "type": "string",
+      "enum": [
+        "workspace-archived",
+        "workspace-unarchived",
+        "workspace-deleted",
+        "membership-summary-changed"
+      ]
+    },
+    "memberCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "isArchived": {
+      "type": "boolean"
+    }
+  }
+}

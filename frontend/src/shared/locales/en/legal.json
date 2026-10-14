@@ -1,0 +1,155 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "How Collaby handles data inside the current educational prototype.",
+    "updated": "Updated on March 12, 2026",
+    "sections": [
+      {
+        "title": "1. General context",
+        "body": [
+          "Collaby is an educational prototype created as part of a graduation project. This document explains which kinds of data may be used in the demonstration build and how the team treats that data."
+        ]
+      },
+      {
+        "title": "2. What data may be processed",
+        "list": [
+          "Account data entered during sign-up and sign-in.",
+          "Test projects, tasks, messages, and profile data created to demonstrate the product flow.",
+          "Technical information related to the interface, routing, and server-side components."
+        ]
+      },
+      {
+        "title": "3. Why the data is used",
+        "list": [
+          "To demonstrate the prototype user flows.",
+          "To verify authentication, routing, and in-app actions.",
+          "To debug and analyze the educational version of the project."
+        ]
+      },
+      {
+        "title": "4. Current limitations",
+        "body": [
+          "Collaby is not a production service and is not intended to store sensitive corporate data. Use only demo-safe and non-critical information in this educational environment."
+        ]
+      },
+      {
+        "title": "5. Access and deletion",
+        "body": [
+          "If you have questions about demonstration data or want to clarify how information is used in the educational build, contact the team through the public channels listed below."
+        ]
+      },
+      {
+        "title": "6. Contacts",
+        "links": [
+          {
+            "label": "Main contact channel",
+            "href": "/contact",
+            "text": "Contacts page"
+          },
+          {
+            "label": "Public repository",
+            "href": "https://github.com/MarkZamore/Collaby",
+            "text": "github.com/MarkZamore/Collaby"
+          }
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "description": "What this educational prototype is intended for and how it should be used.",
+    "updated": "Updated on March 12, 2026",
+    "sections": [
+      {
+        "title": "1. Project status",
+        "body": [
+          "Collaby is an educational prototype created as part of a graduation project. By using the website and application, you acknowledge the demo nature of this version."
+        ]
+      },
+      {
+        "title": "2. What the prototype is for",
+        "body": [
+          "The prototype is intended to demonstrate interfaces, architecture, and user scenarios. It is not offered as a finished commercial service for permanent business use."
+        ]
+      },
+      {
+        "title": "3. Usage limitations",
+        "list": [
+          "Do not use the project to store sensitive working data.",
+          "Do not expect commercial support, uptime guarantees, or production-level stability.",
+          "Do not attempt to access other users' data or demonstration accounts without authorization."
+        ]
+      },
+      {
+        "title": "4. Content and code",
+        "body": [
+          "Design assets, texts, source code, and other materials are part of the graduation project and may change while the team prepares the final defense version."
+        ]
+      },
+      {
+        "title": "5. No production guarantees",
+        "body": [
+          "The project is provided as a demonstration build. The team does not promise uninterrupted availability, commercial fitness, or compatibility with every real business workflow."
+        ]
+      },
+      {
+        "title": "6. Feedback",
+        "links": [
+          {
+            "label": "Contacts",
+            "href": "/contact",
+            "text": "Contacts page"
+          },
+          {
+            "label": "Repository",
+            "href": "https://github.com/MarkZamore/Collaby",
+            "text": "Project repository on GitHub"
+          }
+        ]
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "description": "What browser data the prototype uses to keep the experience stable.",
+    "updated": "Updated on March 12, 2026",
+    "sections": [
+      {
+        "title": "1. What matters here",
+        "body": [
+          "Collaby is an educational prototype, so this cookie policy only describes the basic browser-side data needed for the interface and demo scenarios to work correctly."
+        ]
+      },
+      {
+        "title": "2. What may be stored in the browser",
+        "list": [
+          "Technical data related to sign-in and the current session.",
+          "Interface preferences such as theme and language.",
+          "Temporary UI data that helps the demo flows remain stable."
+        ]
+      },
+      {
+        "title": "3. What is not used here",
+        "body": [
+          "The landing page and prototype do not claim the use of advertising cookies, third-party marketing pixels, or commercial tracking scripts."
+        ]
+      },
+      {
+        "title": "4. Cookie management",
+        "body": [
+          "You can delete cookies through your browser settings. After that, parts of the educational prototype related to sign-in or interface preferences may require you to sign in again."
+        ]
+      },
+      {
+        "title": "5. Contacts",
+        "links": [
+          {
+            "label": "Questions about browser data",
+            "href": "/contact",
+            "text": "Contacts page"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+ARG NODE_BASE_IMAGE=node:24.16.0-alpine@sha256:2bdb65ed1dab192432bc31c95f94155ca5ad7fc1392fb7eb7526ab682fa5bf14
+ARG CADDY_BASE_IMAGE=caddy:2.11.4-alpine@sha256:77c07d5ebfa5be9fd6c820d2094ae662c9e7eeb9bf98346b7f639900263ee2a2
+
+FROM ${NODE_BASE_IMAGE} AS build
+
+WORKDIR /app
+
+ARG VITE_API_BASE_URL=/api
+ARG VITE_API_TIMEOUT=10000
+ARG VITE_BUILD_ID=
+ARG VITE_COMMIT_SHA=
+ARG VITE_REF_NAME=
+ARG VITE_BUILD_TIMESTAMP=
+
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+ENV VITE_API_TIMEOUT=$VITE_API_TIMEOUT
+ENV VITE_BUILD_ID=$VITE_BUILD_ID
+ENV VITE_COMMIT_SHA=$VITE_COMMIT_SHA
+ENV VITE_REF_NAME=$VITE_REF_NAME
+ENV VITE_BUILD_TIMESTAMP=$VITE_BUILD_TIMESTAMP
+
+COPY frontend/package*.json ./
+RUN npm ci --prefer-offline --no-audit --progress=false
+
+COPY frontend/ ./
+COPY panels/admin /panels/admin
+RUN npm run build
+
+FROM ${CADDY_BASE_IMAGE}
+
+COPY frontend/Caddyfile /etc/caddy/Caddyfile
+COPY --from=build /app/dist /srv
+COPY panels/swagger/site /srv/swagger
+
+EXPOSE 80

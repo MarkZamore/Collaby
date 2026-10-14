@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AnalyticsService.Tests/**/*.cs" />
+    <Content Remove="AnalyticsService.Tests/**" />
+    <EmbeddedResource Remove="AnalyticsService.Tests/**" />
+    <None Remove="AnalyticsService.Tests/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../platform/dotnet/Collaby.EventBus/Collaby.EventBus.csproj" />
+    <ProjectReference Include="../../platform/dotnet/Collaby.ServiceDefaults/Collaby.ServiceDefaults.csproj" />
+    <ProjectReference Include="../../platform/dotnet/Collaby.InternalContracts/Collaby.InternalContracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(COLLABY_HOST_WRAPPER_BUILD)' == 'true'">
+    <Content Update="appsettings*.json" CopyToPublishDirectory="Never" />
+    <None Update="appsettings*.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+
+</Project>

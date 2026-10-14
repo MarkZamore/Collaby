@@ -1,0 +1,63 @@
+{
+  "appName": "Collaby",
+  "actions": {
+    "login": "Log in",
+    "register": "Open prototype",
+    "save": "Save changes",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "retry": "Try again",
+    "customize": "Customize",
+    "sendDemo": "Send message",
+    "openPrototype": "Open prototype",
+    "learnMore": "About the project",
+    "contactTeam": "Team contacts",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "logout": "Log out",
+    "loggingOut": "Logging out..."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggleToLight": "Switch to light theme",
+    "toggleToDark": "Switch to dark theme"
+  },
+  "language": {
+    "label": "Language",
+    "en": "EN",
+    "ru": "RU",
+    "kk": "KZ"
+  },
+  "status": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "ready": "Ready"
+  },
+  "labels": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "name": "Name",
+    "username": "Username",
+    "subject": "Subject",
+    "message": "Message",
+    "timezone": "Time zone",
+    "bio": "Bio",
+    "avatarUrl": "Avatar URL",
+    "displayName": "Display name"
+  },
+  "nav": {
+    "about": "About",
+    "features": "Features",
+    "progress": "Roadmap",
+    "benefits": "What already works",
+    "contact": "Contact",
+    "documents": "Documents",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  }
+}

@@ -1,0 +1,408 @@
+/* Contact Page Styles */
+.public-page .contact-page {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.public-page .contact-hero {
+  padding: 140px 0 80px;
+  position: relative;
+}
+
+.public-page .contact-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.public-page .contact-hero-title {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.public-page .contact-hero-description {
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 700px;
+}
+
+/* Contact Info Section */
+.public-page .contact-info-section {
+  padding: 60px 0;
+}
+
+.public-page .contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.public-page .contact-info-card {
+  padding: 32px;
+  border-radius: var(--radius-xl, 16px);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.public-page .contact-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
+}
+
+.public-page.dark-theme .contact-info-card:hover {
+  box-shadow: 0 12px 40px rgba(255, 140, 66, 0.2);
+}
+
+.public-page .info-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.public-page .contact-info-card:hover .info-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.public-page .info-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.public-page .info-content {
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.public-page .info-content:hover {
+  color: var(--primary-orange);
+}
+
+/* Contact Form Section */
+.public-page .contact-form-section {
+  padding: 80px 0 100px;
+}
+
+.public-page .contact-form-wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.public-page .form-container {
+  padding: 48px;
+  border-radius: 32px;
+}
+
+.public-page .form-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.public-page .form-description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.public-page .form-status {
+  padding: 16px 20px;
+  border-radius: var(--radius-lg, 12px);
+  margin-bottom: 24px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.public-page .form-status.success {
+  background: rgba(75, 181, 67, 0.1);
+  color: #4BB543;
+  border-color: rgba(75, 181, 67, 0.3);
+}
+
+.public-page .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.public-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.public-page .form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.public-page .form-input,
+.public-page .form-textarea {
+  padding: 14px 20px;
+  border-radius: var(--radius-lg, 12px);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.public-page.dark-theme .form-input,
+.public-page.dark-theme .form-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.public-page .form-input:focus,
+.public-page .form-textarea:focus {
+  border-color: var(--primary-orange);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.public-page.dark-theme .form-input:focus,
+.public-page.dark-theme .form-textarea:focus {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.public-page .form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Sidebar */
+.public-page .contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.public-page .sidebar-card {
+  padding: 32px;
+  border-radius: var(--radius-xl, 16px);
+  transition: all 0.3s ease;
+}
+
+.public-page .sidebar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
+}
+
+.public-page.dark-theme .sidebar-card:hover {
+  box-shadow: 0 12px 40px rgba(255, 140, 66, 0.2);
+}
+
+.public-page .sidebar-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.public-page .sidebar-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Social Links */
+.public-page .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.public-page .social-link-large {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: var(--radius-lg, 12px);
+  background: rgba(255, 107, 53, 0.05);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.public-page.dark-theme .social-link-large {
+  background: rgba(255, 140, 66, 0.08);
+}
+
+.public-page .social-link-large:hover {
+  background: rgba(255, 107, 53, 0.1);
+  border-color: var(--primary-orange);
+  transform: translateX(8px);
+}
+
+.public-page.dark-theme .social-link-large:hover {
+  background: rgba(255, 140, 66, 0.12);
+}
+
+.public-page .social-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-orange);
+  flex-shrink: 0;
+}
+
+.public-page .social-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.public-page .social-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* FAQ Small */
+.public-page .faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.public-page .faq-item-small {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.public-page.dark-theme .faq-item-small {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.public-page .faq-item-small:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.public-page .faq-question-small {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.public-page .faq-answer-small {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .public-page .contact-hero-title {
+    font-size: 48px;
+  }
+
+  .public-page .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .public-page .contact-form-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .public-page .contact-sidebar {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .public-page .contact-hero {
+    padding: 120px 0 60px;
+  }
+
+  .public-page .contact-hero-title {
+    font-size: 36px;
+  }
+
+  .public-page .contact-hero-description {
+    font-size: 16px;
+  }
+
+  .public-page .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .public-page .contact-info-card {
+    padding: 24px;
+  }
+
+  .public-page .form-container {
+    padding: 32px 24px;
+  }
+
+  .public-page .form-title {
+    font-size: 28px;
+  }
+
+  .public-page .sidebar-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .public-page .contact-hero-title {
+    font-size: 28px;
+  }
+
+  .public-page .form-container {
+    padding: 24px 20px;
+  }
+
+  .public-page .form-title {
+    font-size: 24px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.public-page .contact-hero-content > * {
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.public-page .contact-hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+.public-page .contact-hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+.public-page .contact-hero-content > *:nth-child(3) { animation-delay: 0.3s; }

@@ -1,0 +1,63 @@
+{
+  "appName": "Collaby",
+  "actions": {
+    "logout": "Шығу",
+    "loggingOut": "Шығып жатыр...",
+    "login": "Кіру",
+    "register": "Прототипті ашу",
+    "save": "Өзгерістерді сақтау",
+    "cancel": "Болдырмау",
+    "delete": "Өшіру",
+    "retry": "Қайталау",
+    "customize": "Баптау",
+    "sendDemo": "Хат жіберу",
+    "openPrototype": "Прототипті ашу",
+    "learnMore": "Жоба туралы",
+    "contactTeam": "Команда байланыстары",
+    "back": "Артқа",
+    "next": "Келесі",
+    "finish": "Аяқтау"
+  },
+  "theme": {
+    "light": "Жарық",
+    "dark": "Қараңғы",
+    "system": "Жүйелік",
+    "toggleToLight": "Жарық тақырыпқа ауысу",
+    "toggleToDark": "Қараңғы тақырыпқа ауысу"
+  },
+  "language": {
+    "label": "Тіл",
+    "en": "EN",
+    "ru": "RU",
+    "kk": "KZ"
+  },
+  "status": {
+    "loading": "Жүктелуде...",
+    "saving": "Сақталуда...",
+    "ready": "Дайын"
+  },
+  "labels": {
+    "email": "Электрондық пошта",
+    "password": "Құпиясөз",
+    "confirmPassword": "Құпиясөзді растаңыз",
+    "name": "Аты",
+    "username": "Лақап ат",
+    "subject": "Тақырып",
+    "message": "Хабар",
+    "timezone": "Уақыт белдеуі",
+    "bio": "Өзіңіз туралы",
+    "avatarUrl": "Аватар URL",
+    "displayName": "Көрсетілетін ат"
+  },
+  "nav": {
+    "about": "Жоба туралы",
+    "features": "Мүмкіндіктер",
+    "progress": "Кезеңдер",
+    "benefits": "Қазірдің өзінде бар",
+    "contact": "Байланыс",
+    "documents": "Құжаттар",
+    "privacy": "Құпиялық",
+    "terms": "Шарттар",
+    "cookies": "Cookie файлдары"
+  }
+}

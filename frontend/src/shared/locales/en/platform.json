@@ -1,0 +1,1249 @@
+{
+  "bootstrap": {
+    "auth": "Checking authentication...",
+    "profile": "Loading profile...",
+    "workspaces": "Loading workspaces...",
+    "initializing": "Initializing...",
+    "wait": "Please wait a moment",
+    "errorTitle": "Connection error",
+    "brand": "Collaby",
+    "errorDefault": "Failed to load the app"
+  },
+  "sidebar": {
+    "defaultUser": "User",
+    "profile": "My profile",
+    "workspaces": "Workspaces",
+    "aiAssistant": "AI Assistant",
+    "emptyProjects": "No projects yet",
+    "createProject": "Create project",
+    "deleteWorkspace": "Delete workspace",
+    "nav": {
+      "inbox": "Inbox",
+      "tasks": "My tasks",
+      "messenger": "Messenger",
+      "team": "Team",
+      "analytics": "Analytics",
+      "shop": "Rewards",
+      "awards": "Awards",
+      "gamification": "Gamification"
+    }
+  },
+  "firstWorkspace": {
+    "title": "Create your first workspace",
+    "description": "Set up a workspace and a first project so your dashboard is ready to go.",
+    "workspaceLabel": "Workspace name",
+    "workspacePlaceholder": "Design squad",
+    "projectLabel": "First project",
+    "projectPlaceholder": "Website refresh",
+    "workspaceRequired": "Please enter a workspace name",
+    "projectRequired": "Please enter a project name",
+    "created": "Workspace created",
+    "createError": "Failed to create workspace",
+    "submit": "Create workspace",
+    "creating": "Creating...",
+    "footer": "You can create more workspaces and projects later."
+  },
+  "topbar": {
+    "workspaceFallback": "Workspace",
+    "invite": "Invite member",
+    "searchPlaceholder": "Search across the workspace",
+    "createProjectPlaceholder": "Project name...",
+    "createProject": "Add project",
+    "deleteProject": "Delete project",
+    "deleteProjectError": "Failed to delete the project"
+  },
+  "viewSettings": {
+    "title": "View settings",
+    "fields": {
+      "showTaskId": "Task ID",
+      "showAssignee": "Assignee",
+      "showTags": "Tags",
+      "showPriority": "Priority",
+      "showDueDate": "Due date"
+    }
+  },
+  "welcomeTour": {
+    "done": "Done",
+    "next": "Next",
+    "previous": "Back",
+    "progress": "{{current}} of {{total}}",
+    "steps": {
+      "welcome": {
+        "title": "Welcome to Collaby",
+        "description": "This is your new workspace. Let us quickly walk through the main tools so you can get started."
+      },
+      "navigation": {
+        "title": "Navigation",
+        "description": "Here you will find your workspaces and projects. Create separate spaces for teams, clients, or initiatives."
+      },
+      "views": {
+        "title": "Views",
+        "description": "Switch between the board, list, and calendar views to see work in the format that fits you."
+      },
+      "firstTask": {
+        "title": "Create your first task",
+        "description": "Use this button to create your first task. You can also add tasks directly inside board columns."
+      }
+    }
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Team statistics and productivity overview",
+    "updatedJustNow": "Last updated: just now",
+    "productivity": "Productivity",
+    "taskDistribution": "Task distribution",
+    "statuses": {
+      "backlog": "Backlog",
+      "todo": "To do",
+      "inProgress": "In progress",
+      "review": "Review",
+      "done": "Done"
+    },
+    "leaderboard": "Leaderboard",
+    "leaderboardEmpty": "No leaderboard data yet",
+    "leader": "Leader",
+    "you": "(You)",
+    "loading": "Loading analytics...",
+    "loadError": "Failed to load analytics",
+    "noProject": "Open a project to see analytics",
+    "noData": "No analytics data yet",
+    "completedTasks": "Completed tasks",
+    "periods": {
+      "week": "This week",
+      "month": "This month"
+    },
+    "table": {
+      "rank": "#",
+      "member": "Member",
+      "role": "Role",
+      "level": "Level",
+        "xp": "Experience",
+      "rolePlaceholder": "—",
+      "levelShort": "Lvl {{level}}"
+    },
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    }
+  },
+  "inbox": {
+    "title": "My tasks",
+    "subtitle": "Tasks assigned to you across all workspaces",
+    "loading": "Loading...",
+    "loadError": "Failed to load inbox",
+    "empty": "No tasks waiting for you yet. Tasks assigned to you and placed in the “To do” column will appear here.",
+    "retry": "Try again",
+    "searchPlaceholder": "Search by title",
+    "refresh": "Refresh",
+    "allWorkspaces": "All workspaces",
+    "anyPriority": "Any priority",
+    "noMatches": "No tasks match the selected filters.",
+    "sort": {
+      "dueDate": "By due date",
+      "priority": "By priority",
+      "project": "By project",
+      "createdAt": "By creation date"
+    },
+    "priority": {
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
+  },
+  "gantt": {
+    "scales": {
+      "days": "Days",
+      "weeks": "Weeks",
+      "months": "Months",
+      "years": "Years"
+    },
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "today": "Today",
+    "autoplan": "Auto planning",
+    "headers": {
+      "name": "Name",
+      "assignee": "Assignee",
+      "dateRange": "Range",
+      "days": "Days"
+    },
+    "daysShort": "days",
+    "rootProject": "Project",
+    "emptyTitle": "No timeline data yet",
+    "emptyDescription": "Add tasks with due dates or move work into project columns to see them on the Gantt chart."
+  },
+  "dashboard": {
+    "views": {
+      "board": "Board",
+      "calendar": "Calendar",
+      "gantt": "Gantt"
+    },
+    "stickers": {
+      "title": "Sticker \"{{label}}\"",
+      "filter": "Filter",
+      "add": "Add",
+      "systemSticker": "System sticker",
+      "noValues": "No values",
+      "remove": "Remove from board",
+      "addToBoard": "Add a sticker to the board",
+      "search": "Search...",
+      "available": "Available",
+      "onBoard": "On board",
+      "added": "added",
+      "nothingFound": "Nothing found"
+    },
+    "clearFilters": "Clear",
+  "addSticker": "Add sticker",
+  "openBoardSettings": "Board settings",
+  "noProject": "Create a project by clicking \"+\" in the header",
+    "projectFallback": "Project"
+  },
+  "board": {
+    "columnMenu": {
+      "rename": "Rename",
+      "duplicate": "Duplicate",
+      "moveAllTasks": "Move all tasks",
+      "completeAllTasks": "Complete all tasks",
+      "archive": "Archive",
+      "color": "Column color",
+      "customColor": "Choose custom color",
+      "delete": "Delete column"
+    },
+    "addTask": "Add task",
+    "addTaskPlaceholder": "Enter task name...",
+    "createColumnPlaceholder": "Enter a column name...",
+    "columnMenuTitle": "Column menu",
+    "createColumn": "Create column",
+    "createSummary": "Create summary",
+    "createMirror": "Create mirror"
+  },
+  "list": {
+    "headers": {
+      "title": "Title",
+      "tags": "Tags",
+      "status": "Status",
+      "priority": "Priority",
+      "assignee": "Assignee",
+      "dueDate": "Due date"
+    },
+    "unassigned": "None"
+  },
+  "stickers": {
+    "catalog": {
+      "subtitles": {
+        "system": "System",
+        "stateSet": "State set",
+        "sprint": "Sprint",
+        "number": "Number field",
+        "text": "Text field"
+      },
+      "labels": {
+        "assignee": "Assignee",
+        "deadline": "Deadline",
+        "priority": "Priority",
+        "taskType": "Task type",
+        "sprint": "Sprint",
+        "section": "Section",
+        "estimate": "Estimate in days",
+        "device": "Device",
+        "commentField": "Comment",
+        "stopwatch": "Stopwatch",
+        "recurring": "Recurring task",
+        "timer": "Timer",
+        "difficulty": "Difficulty",
+        "environment": "Environment"
+      },
+      "values": {
+        "feature": "Feature",
+        "bug": "Bug",
+        "improvement": "Improvement",
+        "sprint1": "Sprint 1",
+        "sprint2": "Sprint 2",
+        "sprint3": "Sprint 3",
+        "design": "Design",
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard"
+      }
+    }
+  },
+  "taskCard": {
+    "menu": {
+      "open": "Open",
+      "assignee": "Assign",
+      "dueDate": "Due date",
+      "tags": "Tags",
+      "move": "Move",
+      "delete": "Delete"
+    },
+    "unassigned": "Unassigned",
+    "addSticker": "Add sticker",
+    "moreStickers": "More stickers",
+    "removeValue": "Remove",
+    "editTitle": "Edit",
+    "subtasks": "{{done}}/{{total}} subtasks",
+    "assignAssignee": "Assign assignee"
+  },
+  "taskDetail": {
+    "subtaskPlaceholder": "What needs to be done?",
+    "titlePlaceholder": "Task title",
+    "descriptionPlaceholder": "Add a description...",
+    "subtasksTitle": "Subtasks",
+    "subtasksProgress": "{{done}} of {{total}} completed",
+    "newSubtaskPlaceholder": "New subtask...",
+    "activity": "Activity",
+    "you": "(You)",
+    "editComment": "Edit",
+    "deleteComment": "Delete comment",
+    "commentPlaceholder": "Leave a comment... (Ctrl + Enter to send)",
+    "commentHint": "Ctrl + Enter to send",
+    "assignee": "Assignee",
+    "dueDate": "Due date",
+    "unassigned": "Unassigned",
+    "overdue": "Overdue",
+    "today": "Today",
+    "soon": "Soon",
+    "tags": "Tags",
+    "newLabelPlaceholder": "Label name...",
+    "createFirstLabel": "Create the first label",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "attachFile": "Attach file",
+    "copyLink": "Copy link",
+    "deleteTask": "Delete task",
+    "deleteConfirm": "Are you sure? This action cannot be undone.",
+    "deleteApprove": "Yes, delete"
+  },
+  "messenger": {
+    "title": "Chats",
+    "filters": {
+      "all": "All",
+      "private": "Direct",
+      "project": "Projects",
+      "channel": "Channels"
+    },
+    "searchPlaceholder": "Search chats...",
+    "emptySearch": "Nothing found",
+    "emptyChats": "No chats yet",
+    "newChat": "New chat",
+    "archive": "Archive ({{count}})",
+    "noMessages": "No messages yet",
+    "inputPlaceholder": "Write a message...",
+    "menuTitle": "Actions",
+    "actions": {
+      "archive": "Archive",
+      "unarchive": "Unarchive",
+      "removeForMe": "Remove for me",
+      "clearChat": "Clear chat",
+      "deleteForEveryone": "Delete for everyone"
+    },
+    "userFallback": "User",
+    "chatFallback": "Chat",
+    "chat": {
+      "online": "online",
+      "offline": "offline",
+      "participants": "{{count}} participants",
+      "typingOne": "Typing...",
+      "typingMany": "{{count}} are typing...",
+      "replyFallback": "Reply"
+    },
+    "time": {
+      "yesterday": "yesterday"
+    },
+    "emptyState": {
+      "title": "Choose a chat",
+      "description": "or create a new one to start the conversation"
+    },
+    "create": {
+      "titles": {
+        "type": "New chat",
+        "user": "Direct message",
+        "project": "Project chat",
+        "channel": "Workspace channel"
+      },
+      "typePrivateLabel": "Direct message",
+      "typePrivateDesc": "One-to-one chat with another member",
+      "typeProjectLabel": "Project chat",
+      "typeProjectDesc": "Shared chat for project members",
+      "typeChannelLabel": "Workspace channel",
+      "typeChannelDesc": "Channel for all workspace members",
+      "searchUsersPlaceholder": "Find a user...",
+      "searching": "Searching...",
+      "noUserFound": "User not found",
+      "selectProject": "Choose a project to create a chat:",
+      "noProjects": "No available projects",
+      "channelNamePlaceholder": "Channel name...",
+      "createChannel": "Create channel",
+      "back": "Back"
+    },
+    "incomingCall": {
+      "unknownCaller": "Unknown",
+      "video": "Video call...",
+      "audio": "Audio call...",
+      "decline": "Decline",
+      "answerAudio": "Answer (audio)",
+      "answerVideo": "Answer (video)"
+    },
+    "call": {
+      "header": "Call · {{count}} participants",
+      "selfName": "You",
+      "unknownParticipant": "Participant",
+      "toggleMicOff": "Mute microphone",
+      "toggleMicOn": "Unmute microphone",
+      "toggleCameraOff": "Turn camera off",
+      "toggleCameraOn": "Turn camera on",
+      "shareScreen": "Share screen",
+      "stopShareScreen": "Stop sharing",
+      "endCall": "End call",
+      "leaveCall": "Leave call",
+      "expand": "Expand"
+    },
+    "context": {
+      "remoteEnded": "The other participant ended the call",
+      "declined": "Call declined",
+      "cameraUnavailableAudio": "Camera is unavailable, you joined without video",
+      "microphonePermission": "Microphone access is blocked. Please allow access in your browser.",
+      "microphoneMissing": "Microphone not found. Check that your device is connected.",
+      "connectFailed": "Failed to join the call"
+    }
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Manage members, roles, and access",
+    "workspaceFallback": "Workspace",
+    "invite": "Invite",
+    "searchPlaceholder": "Search members...",
+    "filters": {
+      "all": "All",
+      "owner": "Owners",
+      "admin": "Admins",
+      "member": "Members",
+      "viewer": "Viewers"
+    },
+    "stats": {
+      "members": "Members",
+      "online": "Online",
+      "tasks": "Tasks total",
+      "completed": "Completed"
+    },
+    "member": {
+      "you": "(You)",
+      "noData": "No data",
+      "taskCount": "tasks",
+      "done": "done",
+      "inProgress": "in progress",
+      "changeRole": "Change role",
+      "remove": "Remove from workspace",
+      "removing": "Removing...",
+      "removeError": "Failed to remove the member"
+    },
+    "empty": {
+      "members": "There are no members in this workspace yet",
+      "search": "No members found",
+      "inviteFirst": "Invite the first member"
+    },
+    "activity": {
+      "title": "Activity feed",
+      "empty": "No recent activity",
+      "unassigned": "Unassigned",
+      "status": "Status"
+    },
+    "rolesTitle": "Role permissions",
+    "roles": {
+      "owner": {
+        "label": "Owner",
+        "description": "Full control: deletion, billing, and all settings"
+      },
+      "admin": {
+        "label": "Admin",
+        "description": "Manages members, projects, and roles"
+      },
+      "member": {
+        "label": "Member",
+        "description": "Creates and edits tasks"
+      },
+      "viewer": {
+        "label": "Viewer",
+        "description": "Can view without making changes"
+      }
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Alerts about activity and mentions",
+    "inbox": "Inbox",
+    "markAllRead": "Mark all as read",
+    "filters": {
+      "all": "All",
+      "unread": "Unread"
+    },
+    "emptyTitle": "No notifications",
+    "emptyDescription": "Notifications about your tasks and activity will appear here",
+    "emptyNew": "No new notifications",
+    "accept": "Accept",
+    "decline": "Decline",
+    "accepted": "Accepted",
+    "declined": "Declined",
+    "time": {
+      "justNow": "just now",
+      "minutesAgo": "{{count}} min ago",
+      "hoursAgo": "{{count}} h ago",
+      "daysAgo": "{{count}} d ago"
+    },
+    "toast": {
+      "taskAssigned": "You were assigned a task: {{task}}",
+      "taskAssignedFallback": "You were assigned a new task",
+      "newMessage": "New message from {{sender}}: {{text}}",
+      "newMessageFallback": "New message in chat"
+    }
+  },
+  "filterMenu": {
+    "title": "Filters",
+    "assignee": "Assignee",
+    "all": "All",
+    "priority": "Priority",
+    "tags": "Tags",
+    "active": "Filters active",
+    "inactive": "No active filters",
+    "resetAll": "Reset all",
+    "priorities": {
+      "urgent": "Urgent",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
+  },
+  "inviteMember": {
+    "title": "Invite to workspace",
+    "workspaceFallback": "Workspace",
+    "searchLabel": "Find a user",
+    "searchPlaceholder": "Username or email...",
+    "userFallback": "User",
+    "alreadyMember": "already a member",
+    "roleLabel": "Role",
+    "errors": {
+      "selectUser": "Choose a user from the list",
+      "alreadyMember": "This user is already a member",
+      "alreadyInvited": "There is already an active invitation for this email",
+      "inviteFailed": "Failed to add the member"
+    },
+    "success": "Added!"
+  },
+  "createWorkspace": {
+    "brand": "New workspace",
+    "progress": "Step {{step}} of {{total}}",
+    "purpose": {
+      "title": "What is this workspace for?",
+      "subtitle": "Choose the main purpose",
+      "options": {
+        "work": "Work",
+        "personal": "Personal",
+        "study": "Study"
+      }
+    },
+    "management": {
+      "title": "What will you organize?",
+      "subtitle": "You can select multiple options",
+      "options": {
+        "finance": "Finance",
+        "personal": "Personal tasks",
+        "operations": "Operations",
+        "hr": "HR and hiring",
+        "startup": "Startup",
+        "it": "IT and development",
+        "marketing": "Marketing",
+        "design": "Design",
+        "sales": "Sales",
+        "support": "Support",
+        "other": "Other"
+      }
+    },
+    "name": {
+      "title": "Name the workspace",
+      "subtitle": "Use the company or project name",
+      "placeholder": "For example: Acme Corp"
+    },
+    "actions": {
+      "create": "Create"
+    }
+  },
+  "createProject": {
+    "title": "New project",
+    "nameLabel": "Project name",
+    "namePlaceholder": "For example: Website redesign",
+    "descriptionLabel": "Description (optional)",
+    "descriptionPlaceholder": "Briefly describe the project goals...",
+    "visibilityLabel": "Visibility",
+    "visibility": {
+      "private": {
+        "label": "Private",
+        "description": "Only members"
+      },
+      "team": {
+        "label": "Team",
+        "description": "Everyone in the workspace"
+      },
+      "public": {
+        "label": "Public",
+        "description": "Available by link"
+      }
+    },
+    "templateLabel": "Choose a template",
+    "templates": {
+      "kanban": {
+        "label": "Kanban",
+        "description": "Classic board: To do, In progress, Done"
+      },
+      "scrum": {
+        "label": "Scrum",
+        "description": "Sprints, backlog, and user stories"
+      },
+      "bug": {
+        "label": "Bug tracking",
+        "description": "Track issues and defects"
+      }
+    },
+    "actions": {
+      "create": "Create project"
+    }
+  },
+  "deleteWorkspace": {
+    "title": "Delete workspace",
+    "warning": "This action cannot be undone. All projects, tasks, comments, and data related to this workspace will be deleted.",
+    "confirm": "Type the workspace name \"{{name}}\" to confirm:"
+  },
+  "deleteProject": {
+    "title": "Delete project",
+    "warning": "This action cannot be undone. All tasks, comments, and data related to this project will be deleted.",
+    "confirm": "Type the project name \"{{name}}\" to confirm:"
+  },
+  "demo": {
+    "commentPraise": "Great job! We are moving according to plan.",
+    "commentOnTask": "{{name}} commented on the task \"{{task}}\""
+  },
+  "backgroundPicker": {
+    "title": "Board background",
+    "reset": "Reset",
+    "applyForAll": "Use this board background for all members",
+    "upload": "Upload your own background",
+    "searchPlaceholder": "Search for images...",
+    "search": "Find",
+    "examples": "Examples:",
+    "searchUnavailable": "Search is temporarily unavailable (request limit reached).",
+    "searchFailed": "Failed to load results.",
+    "loadMoreFailed": "Failed to load more.",
+    "searchResults": "Search results",
+    "loadMore": "Load more",
+    "fromUnsplash": "Photos from",
+    "searching": "Searching...",
+    "solidColors": "Solid colors",
+    "images": "Images"
+  },
+  "shop": {
+  "title": "Rewards",
+  "subtitle": "Spend your points on profile rewards and customization",
+  "balance": "Points",
+    "categories": {
+      "all": "All",
+      "frames": "Avatar frames",
+      "themes": "Themes",
+      "badges": "Profile badges",
+      "consumables": "Consumables"
+    },
+    "loading": "Loading...",
+  "empty": "No rewards in this category",
+  "owned": "Unlocked",
+  "insufficientFunds": "Not enough points",
+  "buy": "Unlock",
+  "awardOnly": "Award only"
+  },
+  "helpCenter": {
+    "title": "Help center",
+    "subtitle": "Answers, guides, and reference materials",
+    "searchPlaceholder": "Search the help center...",
+    "faqTitle": "Frequently asked questions",
+    "noAnswer": "Didn’t find the answer?",
+    "contactSupport": "Contact support",
+    "categories": {
+      "gettingStarted": {
+        "title": "Getting started",
+        "description": "Learn the basics of Collaby and set up your first workspace."
+      },
+      "tasks": {
+        "title": "Task management",
+        "description": "Everything about tasks, boards, deadlines, and assignees."
+      },
+      "security": {
+        "title": "Security and access",
+        "description": "Manage permissions, team access, and account security."
+      },
+      "chat": {
+        "title": "Team chat",
+        "description": "Use chat, mentions, and threads to collaborate faster."
+      }
+    },
+    "faqs": {
+      "createProject": {
+        "question": "How do I create a new project?",
+        "answer": "Click the plus button next to your workspace name in the sidebar, choose “New project”, enter a name, and select a template."
+      },
+      "inviteMembers": {
+        "question": "How do I invite members to the team?",
+        "answer": "Open the Team section in the sidebar and click Invite. You can add a member by email or by searching for an existing user."
+      },
+      "changeTheme": {
+        "question": "Can I change the theme?",
+        "answer": "Yes. Use the theme toggle on the landing page or change it later in your profile settings."
+      },
+      "coins": {
+      "question": "How do points and rewards work?",
+      "answer": "You earn points for productive work and can spend them on profile rewards and cosmetic items."
+      }
+    }
+  },
+  "leaderboard": {
+    "project": "Project leaderboard",
+    "global": "Global leaderboard",
+    "loading": "Loading...",
+    "empty": "No data",
+    "levelShort": "Lvl. {{level}}",
+    "userFallback": "User {{id}}"
+  },
+  "skillTree": {
+    "title": "Skill tree",
+    "loading": "Loading...",
+    "empty": "The skill tree is not configured for this project",
+    "tier": "Tier {{tier}}"
+  },
+  "createTask": {
+    "title": "New task",
+    "placeholders": {
+      "title": "Task title",
+      "description": "Add a description..."
+    },
+    "fields": {
+      "status": "Status",
+      "priority": "Priority",
+      "assignee": "Assignee",
+      "dueDate": "Due date"
+    },
+    "statuses": {
+      "backlog": "Backlog",
+      "todo": "To do",
+      "inProgress": "In progress",
+      "review": "Review",
+      "done": "Done"
+    },
+    "priorities": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "unassigned": "Unassigned",
+    "submit": "Create task"
+  },
+  "calendarView": {
+    "today": "Today",
+    "more": "{{count}} more"
+  },
+  "gamificationInfo": {
+    "title": "Gamification",
+    "subtitle": "Work productively, gain experience, unlock rewards, and keep your series going with the team.",
+    "xp": {
+      "title": "Experience",
+      "description": "Every meaningful action in a project adds experience. The more experience you earn, the higher your level and recognition become.",
+      "taskCompletion": "Task completion",
+      "subtaskCompletion": "Subtask completion",
+      "commentAdded": "Comment added",
+      "noteTitle": "Priority multipliers",
+      "note": "Low (x0.5), Medium (x1.0), High (x1.5), Critical (x2.0). A low-priority task grants 5 experience, while a critical task grants 20 experience."
+    },
+    "levels": {
+      "title": "Levels",
+      "description": "Your level reflects overall progress. To reach the next level, you need to collect a specific amount of experience.",
+      "level2": "Level 2",
+      "level5": "Level 5",
+      "level10": "Level 10",
+      "noteTitle": "Formula",
+      "note": "To reach level N, you need N × 100 experience. Levels are tracked both globally and per project."
+    },
+    "coins": {
+      "title": "Points and rewards",
+      "description": "Alongside experience you earn points. Spend them on profile rewards and customization.",
+      "avatarFrames": "Avatar frames",
+      "themes": "Themes",
+      "badges": "Profile badges",
+      "streakFreeze": "Series freeze",
+      "note": "Unlocked rewards stay in your inventory forever. Frames and badges can be equipped from your profile."
+    },
+    "quests": {
+      "title": "Quests",
+      "description": "Special daily and weekly quests are available to you. Complete them to earn extra rewards.",
+      "dailyTitle": "Daily",
+      "dailyDescription": "3 quests every day. They reset at midnight.",
+      "dailyTasks": [
+        "Complete 3 tasks -> +15 Experience, +10 points",
+        "Add 1 comment -> +10 Experience, +5 points",
+        "Complete 1 high-priority task -> +20 Experience, +15 points"
+      ],
+      "weeklyTitle": "Weekly",
+      "weeklyDescription": "2 quests per week. They reset on Monday.",
+      "weeklyTasks": [
+        "Complete 15 tasks this week -> +50 Experience, +30 points",
+        "Maintain a 7-day series -> +30 Experience, +20 points"
+      ]
+    },
+    "streak": {
+      "title": "Series",
+      "description": "Complete at least one task every day to keep your series active. The longer it lasts, the higher your experience bonus becomes.",
+      "day7": "7 days in a row",
+      "day14": "14 days in a row",
+      "day21": "21 days in a row",
+      "day28": "28 days in a row",
+      "day35": "35+ days in a row",
+      "noteTitle": "Series freeze",
+      "note": "If you miss a day, the series resets. You can unlock a series freeze for 500 points. It protects one missed day and is applied automatically."
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "description": "Compete with your teammates. The leaderboard updates in real time and includes both global and project rankings.",
+      "firstPlace": "1st place",
+      "secondPlace": "2nd place",
+      "thirdPlace": "3rd place",
+      "goldCrown": "Gold",
+      "silverCrown": "Silver",
+      "bronzeCrown": "Bronze",
+      "note": "At the end of the year, the top 10 players receive annual rewards that stay on their profile permanently."
+    },
+    "skillTree": {
+      "title": "Skill tree",
+      "description": "Each project has a three-tier skill tree. As you complete tasks, new branches open and let you choose a specialization.",
+      "tier1": "Tier 1 - after 10 tasks",
+      "tier1Value": "Choose path A or B",
+      "tier2": "Tier 2 - after 20 tasks",
+      "tier2Value": "Deepen your branch",
+      "tier3": "Tier 3 - after 30 tasks",
+      "tier3Value": "Final reward and specialization",
+      "note": "Every node grants a bonus: an extra experience multiplier, a cosmetic reward, or a unique title. The project leader configures the skill tree."
+    },
+    "projectProgress": {
+      "title": "Project progress",
+      "description": "Every project has an overall progress percentage based on task weight and subtask completion.",
+      "noteTitle": "Formula",
+      "note": "Progress = sum of (task weight ? completion percent) / sum of weights. Subtasks are included, and archived tasks are excluded.",
+      "extra": "In addition to overall progress, each project has its own experience ranking, level, and final reward path."
+    }
+  },
+  "gamificationWidgets": {
+    "firstPlace": "1st place",
+    "secondPlace": "2nd place",
+    "thirdPlace": "3rd place",
+    "streakTitle": "Series",
+    "daysInRow": "days in a row",
+    "multiplier": "Series bonus: x{{value}}",
+    "questsTitle": "Quests",
+    "levelShort": "Lvl. {{level}}",
+    "projectLeader": "Project leader",
+    "participantFallback": "Participant"
+  },
+  "aiAssistant": {
+    "title": "AI Assistant",
+    "unpin": "Unpin",
+    "pinOnTop": "Pin on top",
+    "minimize": "Minimize",
+    "fullscreen": "Fullscreen",
+    "close": "Close",
+    "welcomeTitle": "Hi! I am the Collaby AI assistant",
+    "welcomeDescription": "I can help with planning, tasks, and project organization. Ask me a question.",
+    "defaultSuggestions": [
+      "How should tasks be distributed in a team?",
+      "Help me draft a project plan",
+      "How can I improve productivity?",
+      "Best Kanban practices"
+    ],
+    "copy": "Copy",
+    "copied": "Copied",
+    "thinking": "Thinking...",
+    "loadingFollowUps": "Preparing follow-up questions...",
+    "inputPlaceholder": "Ask anything...",
+    "apiError": "API error ({{status}})",
+    "noAnswer": "No answer",
+    "errorPrefix": "Error",
+    "executing": "Executing actions...",
+    "chatsTitle": "Chats",
+    "chatsCount": "{{count}} chats",
+    "showChats": "Show chats",
+    "hideChats": "Hide chats",
+    "newChat": "New chat",
+    "emptyChats": "No chats yet",
+    "saveChatName": "Save",
+    "renameChat": "Rename",
+    "deleteChat": "Delete",
+    "confirmClearAll": "Delete all assistant chats?",
+    "messagesCount": "{{count}} messages",
+    "untitledChat": "New chat",
+    "openResult": "Open",
+    "emptyChatPreview": "No messages yet",
+    "boardSummaryTitle": "Board summary for {{project}}",
+    "boardSummaryColumn": "{{column}}: {{count}} tasks, overdue {{overdue}}",
+    "boardSummaryEmpty": "Board summary is unavailable for the current view.",
+    "defaults": {
+      "projectName": "Project",
+      "taskTitle": "Task",
+      "subtaskTitle": "Subtask"
+    },
+    "workspace": {
+      "title": "AI Assistant",
+      "selectWorkspace": "Open a workspace to start asking questions about your tasks and project.",
+      "allProjects": "All projects",
+      "tasksAssigned": "tasks assigned",
+      "externalToggle": "External sources",
+      "emptyTitle": "Ask me anything about your project",
+      "emptyDescription": "I can help with tasks, project context, next steps, and more.",
+      "thinking": "Thinking...",
+      "chatPlaceholder": "Ask a question about your project...",
+      "sourcesUsed": "{{count}} sources used",
+      "summaryTitle": "Summary",
+      "nextStepsTitle": "Next steps",
+      "relatedTasksTitle": "Related tasks",
+      "searchPlaceholder": "Search knowledge base...",
+      "searchAction": "Search",
+      "searchEmpty": "Search results will appear here.",
+      "assignedEmpty": "No assigned tasks found.",
+      "suggestion1": "What should I focus on today?",
+      "suggestion2": "Summarize my current tasks",
+      "suggestion3": "What are the project risks?",
+      "tabSearch": "Search",
+      "tabTasks": "My tasks"
+    },
+    "mentor": {
+      "title": "Mentor Context",
+      "selectWorkspace": "Open a workspace first to manage project knowledge.",
+      "accessTitle": "Restricted access",
+      "accessDescription": "Only workspace owners and admins can manage mentor knowledge.",
+      "tabChat": "Chat",
+      "tabTranscribe": "Transcribe",
+      "tabContext": "Knowledge base",
+      "workspaceWideLabel": "Whole workspace",
+      "entriesCount": "{{count}} knowledge entries",
+      "syncAction": "Sync project",
+      "syncNeedProject": "Select a project to sync.",
+      "syncDone": "Synced {{count}} items.",
+      "chatEmptyTitle": "Discuss project context",
+      "chatEmptyDescription": "Ask about project status, risks, agreements, and next steps before saving a summary.",
+      "thinking": "Thinking...",
+      "chatPlaceholder": "Discuss project context, risks, and decisions...",
+      "needInput": "Provide text or an audio file.",
+      "transcriptSaved": "Transcript saved.",
+      "step1Title": "Add notes or audio",
+      "step2Title": "Generate summary",
+      "step3Title": "Approve and save",
+      "transcriptPlaceholder": "Paste meeting notes, call transcript, or key decisions...",
+      "uploadAudio": "Upload audio file",
+      "audioHint": "Common audio formats are supported for automatic transcription.",
+      "saveTranscript": "Save transcript",
+      "summaryTitle": "Summary title",
+      "generateDraft": "Generate",
+      "draftReady": "Summary draft is ready.",
+      "workspaceWide": "Whole workspace context",
+      "draftPlaceholder": "The generated summary will appear here for editing...",
+      "approveHint": "After approval, this entry becomes part of the project knowledge base.",
+      "approveContext": "Approve and save",
+      "needTitleAndContent": "Title and content are required.",
+      "contextSaved": "Context updated",
+      "contextTitle": "Approved knowledge",
+      "contextSubtitle": "The AI assistant uses these entries when answering team members.",
+      "refreshContext": "Refresh",
+      "contextEmpty": "No approved knowledge entries yet. Sync a project or save a summary."
+    },
+    "results": {
+      "workspaceCreated": "Workspace \"{{name}}\" created",
+      "workspaceCreateFailed": "Failed to create workspace \"{{name}}\"",
+      "workspaceNotFound": "Workspace not found",
+      "workspaceSelected": "Workspace selected",
+      "workspaceRequired": "Select or create a workspace first",
+      "projectCreated": "Project \"{{name}}\" created",
+      "projectCreateFailed": "Failed to create the project",
+      "projectNotFound": "Project not found",
+      "projectSelected": "Project selected",
+      "projectRequired": "Project is required for this action",
+      "projectDeleted": "Project deleted",
+      "columnCreated": "Column \"{{name}}\" created",
+      "columnCreateFailed": "Failed to create column \"{{name}}\"",
+      "columnsCreated": "{{created}} of {{total}} columns created",
+      "columnsReordered": "Column order updated",
+      "columnsReorderFailed": "Failed to update column order",
+      "taskCreated": "Task \"{{title}}\" created",
+      "tasksCreated": "{{created}} of {{total}} tasks created",
+      "taskUpdated": "Task updated",
+      "taskDeleted": "Task deleted",
+      "taskNotFound": "Task not found",
+      "taskMoveFailed": "Failed to move the task",
+      "taskMoved": "Task moved",
+      "subtaskCreated": "Subtask \"{{title}}\" created",
+      "labelCreated": "Label \"{{name}}\" created",
+      "labelCreateFailed": "Failed to create label \"{{name}}\"",
+      "labelAssigned": "Label assigned",
+      "labelAssignFailed": "Failed to assign the label",
+      "labelRemoved": "Label removed from the task",
+      "labelRemoveFailed": "Failed to remove the label",
+      "labelDeleted": "Label deleted",
+      "labelNotFound": "Label not found",
+      "commentAdded": "Comment added",
+      "memberInviteFailed": "Failed to invite the member",
+      "memberInvited": "Member invited",
+      "memberRoleFailed": "Failed to change the role",
+      "memberRoleUpdated": "Member role updated",
+      "stickerAddFailed": "Failed to add the sticker",
+      "stickerAdded": "Sticker added to the board",
+      "stickerRemoveFailed": "Failed to remove the sticker",
+      "stickerRemoved": "Sticker removed from the board",
+      "unsupportedAction": "Unsupported action: {{action}}",
+      "executionFailed": "Failed to execute the action"
+    }
+  },
+  "boardSettings": {
+    "tabs": {
+      "general": "General",
+      "appearance": "Appearance",
+      "skillTree": "Skill Tree",
+      "stickers": "Labels",
+      "automations": "Automations",
+      "linkAccess": "Link access",
+      "taskTransfer": "Task transfer",
+      "templates": "Task templates"
+    },
+    "triggers": {
+      "taskMoved": "Task moved to a column",
+      "stickerChanged": "Label value changed",
+      "taskCreated": "Task created",
+      "deadlineApproaching": "Deadline is approaching"
+    },
+    "actions": {
+      "setSticker": "Set label value",
+      "moveTask": "Move task to a column",
+      "assignUser": "Assign user",
+      "setPriority": "Set priority"
+    },
+    "createAutomation": {
+      "title": "New automation",
+      "name": "Name",
+      "namePlaceholder": "For example: when a task is completed...",
+      "when": "When (trigger)",
+      "then": "Then (action)",
+      "selectColumn": "Select a column...",
+      "selectSticker": "Select a label...",
+      "selectValue": "Select a value...",
+      "valuePlaceholder": "Value...",
+      "create": "Create"
+    },
+    "automationCard": {
+      "when": "When",
+      "then": "Then"
+    },
+    "automations": {
+      "title": "Automations",
+      "activeCount": "Active: {{enabled}} of {{total}}",
+      "empty": "Set up automatic actions for this board",
+      "create": "Create",
+      "routineTitle": "Automate the routine",
+      "routineDescription": "Create rules that automatically perform actions when tasks move, labels change, and other events happen.",
+      "popularTemplates": "Popular templates",
+      "presetCompleteLow": "On completion -> Low priority",
+      "presetNewMedium": "New task -> Medium priority"
+    },
+    "stickers": {
+      "title": "Board labels",
+      "onBoardCount": "On board: {{active}} of {{total}} available",
+      "searchPlaceholder": "Search labels...",
+      "onBoard": "On board",
+      "removeFromBoard": "Remove from board",
+      "catalog": "Catalog",
+      "notFound": "No labels found"
+    },
+    "skillTree": {
+      "title": "Project skill tree",
+      "description": "Configure the six project skill tree slots that team members choose from as the project progresses.",
+      "projectScope": "This configuration only affects the current project. Resetting it restores the shared template and clears project-specific choices.",
+      "emptyProject": "Open a project first to configure its skill tree.",
+      "tierLabel": "Tier {{tier}}",
+      "branchLabel": "Branch {{branch}}",
+      "slotHint": "Tier {{tier}} • branch {{branch}}",
+      "rewardJsonLabel": "Reward JSON",
+      "activeLabel": "Active",
+      "placeholders": {
+        "title": "Node title",
+        "description": "Short description of the reward and why a teammate would choose it"
+      },
+      "actions": {
+        "loading": "Loading skill tree configuration...",
+        "save": "Save tree",
+        "saving": "Saving...",
+        "reset": "Reset to template",
+        "resetting": "Resetting..."
+      },
+      "feedback": {
+        "saved": "Skill tree configuration saved.",
+        "reset": "Skill tree configuration reset to the template."
+      },
+      "errors": {
+        "forbidden": "Only a project owner or admin can change the skill tree configuration.",
+        "load": "Failed to load the skill tree configuration.",
+        "save": "Failed to save the skill tree configuration.",
+        "reset": "Failed to reset the skill tree configuration."
+      }
+    },
+    "linkAccess": {
+      "title": "Enable link access for this board",
+      "description": "A link will be generated that grants guest access to the board."
+    },
+    "taskTransfer": {
+      "description": "Configure rules for automatically transferring tasks between boards and projects.",
+      "empty": "Task transfer rules are not configured yet",
+      "create": "+ Create rule"
+    },
+    "templates": {
+      "description": "Create templates to quickly add typical tasks with prefilled fields.",
+      "empty": "Task templates have not been created yet",
+      "create": "+ Create template"
+    },
+    "general": {
+      "automationTitle": "Automation settings",
+      "moveOnCompleteLabel": "Move a task to a column when completed",
+      "moveOnCompleteDescription": "Completed tasks will be automatically moved to the selected column.",
+      "completeOnMoveLabel": "Complete tasks when moved",
+      "completeOnMoveDescription": "Choose one or more columns. Moving tasks there will automatically mark them as completed.",
+      "coverFromChatLabel": "Use the latest chat image as a cover",
+      "coverFromChatDescription": "The latest image uploaded in chat becomes the task cover. Covers added manually will not be affected.",
+      "coverFromChatAll": "All",
+      "archiveCompletedLabel": "Archive completed tasks",
+      "archiveCompletedDescription": "Tasks will be moved to the archive automatically after completion. Tasks completed before enabling this setting will stay where they are.",
+      "displayTitle": "Display settings",
+      "showTimeInColumnsLabel": "Time spent in columns",
+      "showTimeInColumnsDescription": "Show how long tasks stayed in each column.",
+      "showTaskCountLabel": "Task count in columns",
+      "showMessageCountLabel": "Message count on task cards",
+      "showIfNoMessagesLabel": "Show even if a task has no messages",
+      "showTaskIdLabel": "Task ID on the card"
+    },
+    "modal": {
+      "title": "Board settings \"{{projectName}}\""
+    },
+    "promo": {
+      "title": "More automations and integrations in Extensions",
+      "description": "Flexible system setup for your workflow",
+      "cta": "Open Extensions"
+    },
+    "common": {
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "all": "All"
+    }
+  },
+  "seededCatalog": {
+    "projectLabels": {
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "feature": "Feature",
+      "bug": "Bug",
+      "improvement": "Improvement",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "Design",
+      "sprint1": "Sprint 1",
+      "sprint2": "Sprint 2"
+    },
+    "quests": {
+      "taskStarter": { "title": "Task Starter", "description": "Complete 3 tasks" },
+      "commentator": { "title": "Commentator", "description": "Add 1 comment" },
+      "priorityHunter": { "title": "Priority Hunter", "description": "Complete 1 high-priority task" },
+      "workhorse": { "title": "Workhorse", "description": "Complete 15 tasks this week" },
+      "streakMaster": { "title": "Streak Master", "description": "Maintain a 7-day streak" }
+    },
+    "shopItems": {
+      "goldFrame": { "name": "Gold Frame", "description": "A prestigious gold avatar frame" },
+      "neonFrame": { "name": "Neon Frame", "description": "A vibrant neon avatar frame" },
+      "fireFrame": { "name": "Fire Frame", "description": "An animated fire avatar frame" },
+      "forestTheme": { "name": "Forest Theme", "description": "A calming forest color scheme" },
+      "earlyAccessBadge": { "name": "Early Access Badge", "description": "Badge for early adopters" },
+      "proBadge": { "name": "PRO Badge", "description": "The ultimate PRO badge" },
+      "seriesFreeze": { "name": "Series Freeze", "description": "Protects your series for 1 day" },
+      "goldCrown": { "name": "Gold", "description": "Annual rank award for the global top performer" },
+      "silverCrown": { "name": "Silver", "description": "Annual rank award for the global second place" },
+      "bronzeCrown": { "name": "Bronze", "description": "Annual rank award for the global third place" }
+    },
+    "skillTree": {
+      "executionFocus": { "title": "Execution Focus", "description": "Sharpen delivery speed for your first specialization." },
+      "teamSupport": { "title": "Team Support", "description": "Boost collaborative impact and unlock support-oriented rewards." },
+      "momentumBuilder": { "title": "Momentum Builder", "description": "Turn consistent progress into stronger XP gains." },
+      "mentorAura": { "title": "Mentor Aura", "description": "Earn cosmetic recognition for guiding the project forward." },
+      "projectVanguard": { "title": "Project Vanguard", "description": "Final reward for users leading high-output delivery." },
+      "cultureCatalyst": { "title": "Culture Catalyst", "description": "Final reward centered on team energy and shared gains." }
+    }
+  },
+  "awards": {
+    "title": "Awards",
+    "subtitle": "Track your achievements and unlock new milestones",
+    "summary": {
+      "level": "Level",
+      "xp": "XP",
+      "coins": "Coins",
+      "streak": "Streak"
+    },
+    "earned": "Earned",
+    "claimed": "Claimed",
+    "equipped": "Equipped",
+    "rewardFallback": "Reward",
+    "empty": "No achievements in this category",
+    "inventoryEmpty": "No rewards in inventory yet.",
+    "completedEmpty": "No completed and claimed quests yet.",
+    "activeEmpty": "There are no active quests right now.",
+    "streakEmpty": "Your streak has not started yet.",
+    "streakDetails": "Current streak: {{days}} days · Freezes: {{freezes}}",
+    "sections": {
+      "inventoryTitle": "Inventory rewards",
+      "inventorySubtitle": "Real rewards and items already available to the user.",
+      "completedQuestsTitle": "Completed quests",
+      "completedQuestsSubtitle": "Quests whose rewards have already been claimed.",
+      "activeQuestsTitle": "Active quests",
+      "activeQuestsSubtitle": "Current live progress without static placeholders.",
+      "streakTitle": "Activity streak",
+      "streakSubtitle": "Current live daily activity status."
+    },
+    "categories": {
+      "all": "All",
+      "productivity": "Productivity",
+      "collaboration": "Collaboration",
+      "milestones": "Milestones",
+      "streaks": "Streaks"
+    },
+    "achievements": {
+      "first-task": { "title": "First Steps", "description": "Complete your very first task" },
+      "task-streak-7": { "title": "On Fire", "description": "Complete tasks 7 days in a row" },
+      "ten-tasks": { "title": "Getting Things Done", "description": "Complete 10 tasks" },
+      "team-player": { "title": "Team Player", "description": "Collaborate on 5 tasks with teammates" },
+      "speed-demon": { "title": "Speed Demon", "description": "Complete 3 tasks ahead of deadline" },
+      "fifty-tasks": { "title": "Half Century", "description": "Complete 50 tasks" },
+      "task-streak-30": { "title": "Unstoppable", "description": "Complete tasks 30 days in a row" },
+      "reviewer": { "title": "Sharp Eye", "description": "Review 10 tasks from teammates" },
+      "early-bird": { "title": "Early Bird", "description": "Complete 5 tasks before 9 AM" },
+      "mentor-badge": { "title": "Mentor", "description": "Help 5 teammates complete their tasks" },
+      "project-launcher": { "title": "Project Launcher", "description": "Create your first project" },
+      "hundred-tasks": { "title": "Centurion", "description": "Complete 100 tasks" },
+      "helpful": { "title": "Helping Hand", "description": "Leave 20 helpful comments on tasks" },
+      "consistent": { "title": "Consistency King", "description": "Stay active for 90 days" },
+      "weekly-planner": { "title": "Weekly Planner", "description": "Plan and complete all weekly goals 4 times" },
+      "communicator": { "title": "Communicator", "description": "Send 50 messages in team channels" },
+      "branching-out": { "title": "Branching Out", "description": "Work across 3 different projects" }
+    }
+  }
+}

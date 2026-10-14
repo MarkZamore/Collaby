@@ -1,0 +1,58 @@
+# Метаданные репозитория
+.git
+.gitignore
+.claude
+.playwright-mcp
+
+# IDE и локальные настройки
+.idea
+.vs
+.vscode
+**/*.DotSettings.user
+**/*.sln.docstates
+**/*.suo
+**/*.user
+**/*.userosscache
+
+# Системные файлы
+**/.DS_Store
+**/Thumbs.db
+
+# Локальные env и секреты
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+**/appsettings.*.local.json
+**/secrets.json
+
+# Артефакты сборки и тестов
+**/bin
+**/build
+**/coverage
+**/dist
+**/logs
+**/node_modules
+**/obj
+**/TestResults
+**/__pycache__
+**/.coverage
+**/.coverage.*
+**/*.log
+*.pyc
+
+# Локальные runtime и QA-артефакты
+ci-reports
+cloudflare/.terraform
+docker-compose.override.yml
+docker-compose.*.local.yml
+gl-secret-detection-report.json
+output
+panels/panel-credentials.local.md
+qa-artifacts
+server-connect.md
+
+.local
+.tools

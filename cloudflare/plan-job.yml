@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata: {name: cloudflare-plan, namespace: collaby-system}
+spec:
+  ttlSecondsAfterFinished: 3600
+  activeDeadlineSeconds: 600
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      serviceAccountName: cloudflare-terraform
+      containers:
+        - name: terraform
+          image: hashicorp/terraform:1.15.5
+          command: [sh, -ec]
+          args:
+            - cp /source/* /work/; cd /work; terraform init -input=false; terraform plan -input=false
+          envFrom:
+            - secretRef: {name: cloudflare-terraform-inputs}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {memory: 512Mi}
+          volumeMounts:
+            - {name: source, mountPath: /source, readOnly: true}
+            - {name: work, mountPath: /work}
+      volumes:
+        - name: source
+          configMap: {name: cloudflare-terraform-source}
+        - name: work
+          emptyDir: {}

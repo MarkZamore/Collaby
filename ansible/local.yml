@@ -1,0 +1,83 @@
+- name: Локальный контур Collaby
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  environment:
+    K8S_AUTH_HOST: https://kubernetes.default.svc
+    K8S_AUTH_API_KEY: "{{ lookup('file', '/var/run/secrets/kubernetes.io/serviceaccount/token') }}"
+    K8S_AUTH_SSL_CA_CERT: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+  tasks:
+    - name: Применить конфигурацию и постоянные хранилища
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', '/configuration/config.json') | from_json }}"
+      no_log: true
+    - name: Применить секреты
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', '/credentials/secrets.json') | from_json }}"
+      no_log: true
+    - name: Запустить инфраструктуру
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', '/configuration/storage.json') | from_json }}"
+        wait: true
+        wait_timeout: 600
+    - name: Создать Kafka topics
+      kubernetes.core.k8s_info:
+        api_version: apps/v1
+        kind: StatefulSet
+        namespace: collaby
+        name: "{{ item }}"
+      register: storage_ready
+      until: storage_ready.resources | length > 0 and (storage_ready.resources[0].status.readyReplicas | default(0)) == 1
+      retries: 120
+      delay: 5
+      loop: [postgres, mongo-db, cache, events]
+    - name: Применить Kafka topics Job
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', '/configuration/topics.json') | from_json }}"
+        wait: true
+        wait_timeout: 300
+        wait_condition:
+          type: Complete
+          status: 'True'
+    - name: Загрузить стадии приложения
+      ansible.builtin.set_fact:
+        application_resources: "{{ lookup('file', '/configuration/apps.json') | from_json }}"
+    - name: Запустить backend с автоматическими миграциями
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ application_resources | rejectattr('metadata.name', 'in', ['assistant', 'frontend']) | list }}"
+        wait: true
+        wait_timeout: 600
+    - name: Запустить AI с обязательным адаптером
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ application_resources | selectattr('metadata.name', 'equalto', 'assistant') | list }}"
+        wait: true
+        wait_timeout: 3600
+    - name: Запустить frontend после готовности backend и AI
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ application_resources | selectattr('metadata.name', 'equalto', 'frontend') | list }}"
+        wait: true
+        wait_timeout: 300
+    - name: Запустить панели
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', '/configuration/panels.json') | from_json | rejectattr('metadata.name', 'equalto', 'portainer') | list }}"
+        wait: true
+        wait_timeout: 600
+    - name: Запустить Portainer непосредственно перед созданием администратора
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', '/configuration/panels.json') | from_json | selectattr('metadata.name', 'equalto', 'portainer') | list }}"
+        wait: true
+        wait_timeout: 300
+    - name: Создать демоданные и подключить Portainer
+      ansible.builtin.command: python /controller/seed-local.py
+      environment:
+        COLLABY_SEED_CONFIG: /credentials/local.json
+      no_log: true

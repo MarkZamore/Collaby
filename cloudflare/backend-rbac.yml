@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: cloudflare-terraform, namespace: collaby-system}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: {name: cloudflare-terraform-state, namespace: collaby-system}
+rules:
+  - apiGroups: ['']
+    resources: [secrets]
+    verbs: [get, list, create, update, patch, delete]
+  - apiGroups: [coordination.k8s.io]
+    resources: [leases]
+    verbs: [get, list, create, update, patch, delete]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata: {name: cloudflare-terraform-state, namespace: collaby-system}
+subjects:
+  - {kind: ServiceAccount, name: cloudflare-terraform, namespace: collaby-system}
+roleRef: {kind: Role, name: cloudflare-terraform-state, apiGroup: rbac.authorization.k8s.io}

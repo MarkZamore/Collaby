@@ -1,0 +1,14 @@
+{
+  "adapter": {
+    "id": "collaby-qwen2.5-1.5b-lora",
+    "displayName": "Collaby Qwen mentor+assistant adapter",
+    "version": "2026-03-20-colab-0642",
+    "status": "ready",
+    "format": "gguf-lora",
+    "filename": "final-adapter-f16-2026-03-20-colab-0642.gguf",
+    "downloadUrl": "file:///app/assets/final-adapter-f16-2026-03-20-colab-0642.gguf",
+    "sha256": "4db31ce13521a516042626be61e52611dab6972467ebb958776894a2eff86d26",
+    "sizeBytes": 36956896,
+    "notes": "Экспортировано из Google Colab после SFT + QLoRA (4-bit) и конвертировано в GGUF LoRA для llama.cpp runtime."
+  }
+}

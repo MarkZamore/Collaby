@@ -1,0 +1,123 @@
+name: Collaby checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: {dotnet-version: '10.0.x'}
+      - run: dotnet restore Collaby.slnx
+      - run: dotnet build Collaby.slnx -c Release --no-restore -m:1
+      - run: dotnet test Collaby.slnx -c Release --no-build -m:1 --logger trx --results-directory TestResults
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: dotnet-tests, path: TestResults}
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run: {working-directory: frontend}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24', cache: npm, cache-dependency-path: frontend/package-lock.json}
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_COMMIT_SHA: ${{ github.sha }}
+          VITE_REF_NAME: ${{ github.ref_name }}
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -r services/AgentService/requirements.txt -r scripts/requirements-local.txt
+      - run: python -m unittest discover -s services/AgentService/tests
+      - run: python -m unittest discover -s scripts/tests
+      - run: python scripts/verify-runtime.py
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -r scripts/requirements-local.txt
+      - run: python scripts/render-local.py --validate
+      - uses: actions/setup-go@v5
+        with: {go-version: '1.24.x'}
+      - run: go install github.com/yannh/kubeconform/cmd/kubeconform@v0.7.0
+      - name: Проверить схемы всех Kubernetes ресурсов
+        run: |
+          python - <<'PY'
+          import json, pathlib, yaml
+          resources = []
+          for path in pathlib.Path('.local/validated').glob('*.json'):
+              if path.stem in ['config', 'secrets', 'storage', 'apps', 'panels', 'topics']:
+                  resources.extend(json.loads(path.read_text()))
+          for path in list(pathlib.Path('kubernetes').glob('*.yml')) + list(pathlib.Path('cloudflare').glob('*.yml')):
+              resources.extend(d for d in yaml.safe_load_all(path.read_text()) if d)
+          pathlib.Path('.local/schema-input.yml').write_text(yaml.safe_dump_all(resources))
+          PY
+          kubeconform -strict -summary .local/schema-input.yml
+  images:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: access, context: ., file: services/AccessHost/Dockerfile}
+          - {name: workspace, context: ., file: services/WorkspaceHost/Dockerfile}
+          - {name: realtime, context: ., file: services/RealtimeHost/Dockerfile}
+          - {name: engagement, context: ., file: services/GamificationService/Dockerfile}
+          - {name: frontend, context: ., file: frontend/Dockerfile}
+          - {name: assistant, context: services/AgentService, file: services/AgentService/Dockerfile.cpu}
+          - {name: postgres, context: database/postgres, file: database/postgres/Dockerfile}
+          - {name: mongo-db, context: database/mongodb, file: database/mongodb/Dockerfile}
+          - {name: cache, context: database/redis, file: database/redis/Dockerfile}
+          - {name: controller, context: ., file: ansible/Dockerfile}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.file }}
+          push: false
+          load: ${{ matrix.name == 'controller' || matrix.name == 'assistant' }}
+          tags: collaby/${{ matrix.name }}:ci
+          cache-from: type=gha,scope=${{ matrix.name }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.name }}
+      - if: matrix.name == 'controller'
+        run: docker run --rm collaby/controller:ci ansible-playbook --syntax-check ansible/local.yml
+      - if: matrix.name == 'assistant'
+        name: Проверить CPU audio decoder без загрузки моделей
+        run: docker run --rm --entrypoint python collaby/assistant:ci verify_native_runtime.py --decode-only
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: {go-version: '1.24.x'}
+      - run: go install github.com/zricethezav/gitleaks/v8@v8.30.1
+      - run: gitleaks dir . --redact --no-banner --exit-code 1
+  cloudflare-config:
+    runs-on: ubuntu-latest
+    defaults:
+      run: {working-directory: cloudflare}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with: {terraform_version: '1.15.5'}
+      - run: terraform fmt -check
+      - run: terraform init -backend=false -input=false -lockfile=readonly
+      - run: terraform validate

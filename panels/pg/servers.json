@@ -1,0 +1,54 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Collaby Identity",
+      "Group": "Collaby",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "collaby_identity",
+      "Username": "identity_user",
+      "SSLMode": "prefer",
+      "Shared": true
+    },
+    "2": {
+      "Name": "Collaby Users",
+      "Group": "Collaby",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "collaby_users",
+      "Username": "users_user",
+      "SSLMode": "prefer",
+      "Shared": true
+    },
+    "3": {
+      "Name": "Collaby Management",
+      "Group": "Collaby",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "collaby_management",
+      "Username": "management_user",
+      "SSLMode": "prefer",
+      "Shared": true
+    },
+    "4": {
+      "Name": "Collaby Gamification",
+      "Group": "Collaby",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "collaby_gamification",
+      "Username": "gamification_user",
+      "SSLMode": "prefer",
+      "Shared": true
+    },
+    "5": {
+      "Name": "Collaby Analytics",
+      "Group": "Collaby",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "collaby_analytics",
+      "Username": "analytics_user",
+      "SSLMode": "prefer",
+      "Shared": true
+    }
+  }
+}

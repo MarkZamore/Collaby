@@ -1,0 +1,473 @@
+{
+  "navbar": {
+    "aboutMenu": "About",
+    "aboutTeam": {
+      "label": "About the team",
+      "url": "/about"
+    },
+    "developmentStages": {
+      "label": "Development stages",
+      "url": "#progress"
+    },
+    "contact": {
+      "label": "Contacts",
+      "url": "/contact"
+    },
+    "features": {
+      "label": "Features",
+      "url": "#features"
+    },
+    "benefits": {
+      "label": "Benefits",
+      "url": "#benefits"
+    },
+    "progress": {
+      "label": "Roadmap",
+      "url": "#progress"
+    },
+    "theme": "Theme",
+    "login": {
+      "label": "Log in",
+      "url": "/auth?mode=login"
+    },
+    "register": {
+      "label": "Register",
+      "url": "/auth?mode=register"
+    }
+  },
+  "footer": {
+    "description": "Collaby brings tasks, communication, gamification, and analytics into one workspace — so your team can collaborate smarter.",
+    "project": "Platform",
+    "projectLinks": [
+      {
+        "label": "Features",
+        "url": "/#features"
+      },
+      {
+        "label": "Benefits",
+        "url": "/#benefits"
+      }
+    ],
+    "pages": "Pages",
+    "pageLinks": [
+      {
+        "label": "About the team",
+        "url": "/about"
+      },
+      {
+        "label": "Contacts",
+        "url": "/contact"
+      },
+      {
+        "label": "Get started",
+        "url": "/auth?mode=login"
+      }
+    ],
+    "documents": "Legal",
+    "documentLinks": [
+      {
+        "label": "Privacy policy",
+        "url": "/privacy"
+      },
+      {
+        "label": "Terms of use",
+        "url": "/terms"
+      },
+      {
+        "label": "Cookie policy",
+        "url": "/cookies"
+      }
+    ],
+    "follow": "Community",
+    "followDescription": "Stay up to date with the latest releases and connect with the team.",
+    "followLinks": [
+      {
+        "label": "Telegram",
+        "url": "https://t.me/Predator_TDK"
+      },
+      {
+        "label": "Contacts page",
+        "url": "/contact"
+      }
+    ],
+    "copyright": "All rights reserved.",
+    "legalLinks": [
+      {
+        "label": "Privacy policy",
+        "url": "/privacy"
+      },
+      {
+        "label": "Terms of use",
+        "url": "/terms"
+      },
+      {
+        "label": "Cookie policy",
+        "url": "/cookies"
+      }
+    ]
+  },
+  "home": {
+    "badge": "Teamwork, reimagined",
+    "title": "Your team's work in one place with Collaby",
+    "description": "Tasks, communication, gamification, and analytics — all in one interface. Collaby helps teams stay organized, motivated, and aligned.",
+    "stats": {
+      "team": "Team members",
+      "modules": "Key modules",
+      "months": "Months of development"
+    },
+    "primaryCta": {
+      "label": "Get started free",
+      "url": "/auth?mode=register"
+    },
+    "secondaryCta": {
+      "label": "Learn more",
+      "url": "/about"
+    },
+    "heroMedia": {
+      "imageUrl": "",
+      "imageAlt": "Collaby dashboard preview",
+      "caption": "Dashboard placeholder"
+    },
+    "screenshots": [
+      {
+        "type": "kanban",
+        "label": "Kanban board",
+        "imageUrl": "",
+        "imageAlt": "Kanban board preview",
+        "caption": "Task board"
+      },
+      {
+        "type": "profile",
+        "label": "User profile",
+        "imageUrl": "",
+        "imageAlt": "User profile preview",
+        "caption": "Profile page"
+      },
+      {
+        "type": "leaderboard",
+        "label": "Leaderboard",
+        "imageUrl": "",
+        "imageAlt": "Leaderboard preview",
+        "caption": "Gamification ranking"
+      },
+      {
+        "type": "chat",
+        "label": "Built-in chat",
+        "imageUrl": "",
+        "imageAlt": "Built-in chat preview",
+        "caption": "Messenger page"
+      }
+    ],
+    "featuresTitle": "Everything your team needs",
+    "featuresDescription": "Core collaboration tools designed to keep your projects moving forward.",
+    "features": [
+      {
+        "icon": "🎯",
+        "title": "Task management",
+        "description": "Kanban boards, statuses, priorities, and deadlines keep your team's workflow clear and actionable."
+      },
+      {
+        "icon": "🏆",
+        "title": "Gamification",
+        "description": "Points, achievements, and levels turn routine work into engaging progress your team can see."
+      },
+      {
+        "icon": "📊",
+        "title": "Analytics",
+        "description": "Real-time dashboards and metrics give you a clear picture of progress and team activity."
+      },
+      {
+        "icon": "💬",
+        "title": "Built-in chat",
+        "description": "Messaging built right next to your tasks so context never gets lost between tools."
+      },
+      {
+        "icon": "🤖",
+        "title": "AI assistant",
+        "description": "An intelligent assistant that helps with task planning, summaries, and team workflows."
+      },
+      {
+        "icon": "📁",
+        "title": "Workspaces and projects",
+        "description": "Organize teams, workspaces, and projects in a flexible structure that scales with you."
+      }
+    ],
+    "benefitsTitle": "Why teams choose Collaby",
+    "benefits": [
+      {
+        "icon": "+",
+        "title": "One entry point",
+        "description": "Tasks, profiles, messages, and gamification live in one connected workspace."
+      },
+      {
+        "icon": "+",
+        "title": "Transparent workflows",
+        "description": "See task progress, team activity, and project health at a glance."
+      },
+      {
+        "icon": "+",
+        "title": "Built-in gamification",
+        "description": "Game mechanics keep your team motivated and make everyday work more rewarding."
+      },
+      {
+        "icon": "+",
+        "title": "Flexible structure",
+        "description": "Workspaces, projects, and roles adapt to how your team actually works."
+      }
+    ],
+    "benefitsMedia": {
+      "imageUrl": "",
+      "imageAlt": "Analytics preview",
+      "caption": "Analytics placeholder"
+    },
+    "screenshotsTitle": "See it in action",
+    "screenshotsDescription": "A look at key screens from the Collaby platform.",
+    "faqTitle": "Frequently asked questions",
+    "faqDescription": "Quick answers to the most common questions about Collaby.",
+    "faq": [
+      {
+        "question": "What is Collaby?",
+        "answer": "Collaby is a collaboration platform that combines task management, chat, gamification, and analytics in one workspace."
+      },
+      {
+        "question": "Can I register and try it out?",
+        "answer": "Yes. Create a free account to explore the full platform and all its features."
+      },
+      {
+        "question": "Is Collaby ready for production use?",
+        "answer": "Collaby is currently in active development. Core features are functional, and we're adding more every month."
+      },
+      {
+        "question": "Which features are already available?",
+        "answer": "Task boards, projects, user profiles, built-in chat, gamification with leaderboards, and real-time analytics."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "We follow standard security practices. However, as the platform is in early access, we recommend using test data for now."
+      },
+      {
+        "question": "How can I reach the team?",
+        "answer": "Visit the contacts page or reach out through our public channels on GitHub and Telegram."
+      }
+    ],
+    "roadmapTitle": "Product roadmap",
+    "roadmapDescription": "Key milestones in Collaby's development — from idea to a fully featured platform.",
+    "roadmap": [
+      {
+        "date": "September – October 2025",
+        "title": "Research and design",
+        "description": "Market research, product architecture, and core UX decisions that shaped the platform."
+      },
+      {
+        "date": "November – December 2025",
+        "title": "Core platform launch",
+        "description": "Authentication, task management, projects, profiles, and foundational gamification went live."
+      },
+      {
+        "date": "January – April 2026",
+        "title": "Full feature rollout",
+        "description": "Dashboards, built-in chat, AI assistant, and deeper integration across all platform modules."
+      }
+    ],
+    "imagePlaceholders": {
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "analytics": "Analytics",
+      "kanban": "Kanban board",
+      "chat": "Built-in chat",
+      "leaderboard": "Leaderboard",
+      "skills": "Skill tree",
+      "team": "Team"
+    }
+  },
+  "about": {
+    "badge": "About the project",
+    "title": "The team and the idea behind Collaby",
+    "description": "Collaby brings task management, communication, gamification, and analytics into one modern workspace. Our mission is to make teamwork clearer, more engaging, and easier to manage.",
+    "stats": {
+      "team": "Team members",
+      "scenarios": "Key scenarios",
+      "months": "Months of development",
+      "goal": "Goal: better teamwork"
+    },
+    "missionTitle": "Why we are building this",
+    "missionDescription": "We believe collaboration tools should do more than track tasks — they should make teamwork visible, rewarding, and genuinely productive.",
+    "visionTitle": "What Collaby explores",
+    "visionDescription": "Collaby explores how gamification and transparent workflows can make collaboration more understandable and engaging.",
+    "valuesTitle": "Our principles",
+    "valuesDescription": "The values that guide every decision we make while building Collaby.",
+    "values": [
+      {
+        "icon": "🎯",
+        "title": "Purpose-driven",
+        "description": "Every feature exists to solve a real collaboration challenge."
+      },
+      {
+        "icon": "🧩",
+        "title": "Unified platform",
+        "description": "Tasks, communication, gamification, and analytics belong to one connected system."
+      },
+      {
+        "icon": "🤝",
+        "title": "Built together",
+        "description": "Frontend, backend, and product logic are developed as one cohesive effort."
+      },
+      {
+        "icon": "🔍",
+        "title": "Transparency",
+        "description": "We ship what works and are honest about what's still in progress."
+      }
+    ],
+    "storyTitle": "How Collaby started",
+    "story": [
+      "The idea began with a simple observation: most project-management tools track tasks well but rarely make teamwork feel clearer or more engaging.",
+      "Instead of building another task tracker, we set out to create a platform where tasks, communication, profiles, analytics, and game mechanics reinforce each other within a single product experience.",
+      "Collaby is still evolving. It represents our vision for what modern team collaboration can look like when every piece of the workflow is connected."
+    ],
+    "quotes": [
+      {
+        "text": "I wanted the interface to do more than look good — it should help users think faster, with minimal clicks and maximum clarity.",
+        "author": "Temirlan Ospanov",
+        "role": "Frontend Developer"
+      },
+      {
+        "text": "I built the backend so that every module — tasks, chat, gamification — works as one cohesive system, not a collection of separate services.",
+        "author": "Dildar Dyusembeyev",
+        "role": "Backend Developer"
+      },
+      {
+        "text": "We set out to build more than a beautiful interface — we wanted a platform that genuinely helps teams work better together.",
+        "author": "Oscar Salnikov",
+        "role": "Product & UX"
+      }
+    ],
+    "storyMedia": {
+      "imageUrl": "/images/team-photo.jpg",
+      "imageAlt": "Collaby project team"
+    },
+    "timelineTitle": "Development timeline",
+    "timelineDescription": "The journey from first idea to a feature-complete platform.",
+    "timeline": [
+      {
+        "date": "September – October 2025",
+        "title": "Kickoff and research",
+        "description": "Team formed, analyzed existing tools, defined product scenarios, and chose the technology stack."
+      },
+      {
+        "date": "November – December 2025",
+        "title": "MVP and core architecture",
+        "description": "Authentication, projects, task boards, initial gamification mechanics, and microservice architecture."
+      },
+      {
+        "date": "January – February 2026",
+        "title": "Feature expansion",
+        "description": "Built-in chat, analytics, AI assistant, reward shop, and extended team roles."
+      },
+      {
+        "date": "March – April 2026",
+        "title": "Integration and polish",
+        "description": "Deep cross-module integration, UX optimization, i18n, dark theme, and testing."
+      },
+      {
+        "date": "May 2026",
+        "title": "Thesis defense",
+        "description": "Final documentation, platform demonstration, and project defense."
+      }
+    ],
+    "teamTitle": "Meet the team",
+    "teamDescription": "Three people building a platform that makes teamwork better.",
+    "team": [
+      {
+        "name": "Temirlan Ospanov",
+        "position": "Frontend Developer",
+        "description": "Builds the visual interface, navigation, and user experience.",
+        "initials": "TO",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/187307610?v=4",
+        "profileUrl": "https://github.com/TemirlanOspanov"
+      },
+      {
+        "name": "Dildar Dyusembeyev",
+        "position": "Backend Developer",
+        "description": "Designs services, data flows, and platform integrations.",
+        "initials": "DD",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/167680253?v=4",
+        "profileUrl": "https://github.com/Dildar05"
+      },
+      {
+        "name": "Oscar Salnikov",
+        "position": "Product & UX",
+        "description": "Shapes product strategy, user experience, and public-facing presentation.",
+        "initials": "OS",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/187437301?v=4",
+        "profileUrl": "https://github.com/OscarSalnikov"
+      }
+    ],
+    "ctaTitle": "Ready to explore Collaby?",
+    "ctaDescription": "Jump into the platform or get in touch with the team.",
+    "primaryCta": {
+      "label": "Get started",
+      "url": "/auth?mode=login"
+    },
+    "secondaryCta": {
+      "label": "Contact the team",
+      "url": "/contact"
+    }
+  },
+  "contact": {
+    "badge": "Contact us",
+    "title": "Get in touch with the Collaby team",
+    "description": "Have a question, want to explore the code, or just want to say hello? Use the links below to reach us through our public channels.",
+    "info": [
+      {
+        "icon": "🚀",
+        "title": "Status",
+        "info": "Active development, early access",
+        "url": ""
+      },
+      {
+        "icon": "👥",
+        "title": "Team",
+        "info": "3 team members",
+        "url": "/about"
+      }
+    ],
+    "formTitle": "Send us a message",
+    "formDescription": "Use this form to share feedback or ask a question. This is a demo form — for a guaranteed response, please use the links on the right.",
+    "form": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "subjectPlaceholder": "Message subject",
+      "messagePlaceholder": "Write your message here..."
+    },
+    "realLinksTitle": "Official channels",
+    "realLinksDescription": "The best ways to reach the Collaby team directly.",
+    "socialLinks": [
+      {
+        "key": "whatsapp",
+        "label": "WhatsApp",
+        "url": "https://wa.me/77066021211"
+      },
+      {
+        "key": "telegram",
+        "label": "Telegram",
+        "url": "https://t.me/Predator_TDK"
+      }
+    ],
+    "importantTitle": "Good to know",
+    "faq": [
+      {
+        "question": "What's the best way to reach the team?",
+        "answer": "Use GitHub, Telegram, or the team page — we respond on all channels."
+      },
+      {
+        "question": "Does this form send messages?",
+        "answer": "This is a demo form. For a guaranteed response, use the direct links on the right."
+      },
+      {
+        "question": "Is Collaby ready for teams to use?",
+        "answer": "Core features are live and functional. We're in active development and adding new capabilities regularly."
+      }
+    ],
+    "demoStatus": "This is a demo form. No message was sent — please use the direct links on the right to reach us."
+  }
+}
