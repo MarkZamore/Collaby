@@ -19,6 +19,19 @@ function Native-Output([string]$Executable, [string[]]$Arguments) {
     $script:LASTEXITCODE = $LASTEXITCODE
     return $output
 }
+function Wait-Kubernetes([int]$TimeoutSeconds = 300, [int]$PollSeconds = 3) {
+    $contexts = @(Native-Output 'kubectl' @('--context','docker-desktop','config','get-contexts','-o','name'))
+    if ($LASTEXITCODE -ne 0 -or $contexts -notcontains 'docker-desktop') { throw 'Контекст docker-desktop отсутствует. Создайте Kubernetes cluster в Docker Desktop: Kubernetes > Create cluster > kubeadm.' }
+    Write-Host 'Ожидание запуска Kubernetes Docker Desktop...'
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    do {
+        $node = Native-Output 'kubectl' @('--context','docker-desktop','get','nodes','-o','name','--request-timeout=10s')
+        if ($LASTEXITCODE -eq 0 -and $node) { return $node }
+        if ((Get-Date) -ge $deadline) { break }
+        Start-Sleep -Seconds $PollSeconds
+    } while ((Get-Date) -lt $deadline)
+    throw 'Kubernetes Docker Desktop не запустился за 5 минут. Проверьте состояние cluster kubeadm в Docker Desktop, память WSL и журнал Docker Desktop; затем повторите start-local.cmd.'
+}
 function Kube([string[]]$Arguments) { Run-Native 'kubectl' (@('--context','docker-desktop') + $Arguments) }
 function Owned-Process($Entry, [string]$Name) {
     if (-not $Entry) { return $null }
@@ -131,8 +144,7 @@ try {
     } while ((Get-Date) -lt $deadline)
     if ($os -ne 'linux') { throw 'Linux engine Docker Desktop не готов. Проверьте WSL 2 и журнал Docker Desktop.' }
     if (-not (Get-Command kubectl -ErrorAction SilentlyContinue)) { throw 'kubectl отсутствует. Восстановите установку Docker Desktop.' }
-    $node = Native-Output 'kubectl' @('--context','docker-desktop','get','nodes','-o','name')
-    if ($LASTEXITCODE -ne 0 -or -not $node) { throw 'Создайте Kubernetes cluster в Docker Desktop: Kubernetes > Create cluster > kubeadm. Затем повторите запуск.' }
+    $node = Wait-Kubernetes
     Kube @('wait','--for=condition=Ready','node','--all','--timeout=180s')
     $nodes = & kubectl --context docker-desktop get nodes -o json | ConvertFrom-Json
     if ($nodes.items.Count -ne 1 -or $nodes.items[0].metadata.name -ne 'docker-desktop') { throw 'Ожидался одноузловой Kubernetes kubeadm docker-desktop.' }

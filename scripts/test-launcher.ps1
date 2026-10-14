@@ -56,4 +56,29 @@ function kubectl { $script:diagnosticCommands += ($args -join ' ') }
 $diagnostics = Show-Diagnostics 'local-apply-test' 6>&1 | Out-String
 if ($script:diagnosticCommands.Count -ne 3 -or -not ($script:diagnosticCommands -match 'job-name=local-apply-test')) { throw 'Диагностика должна читать workload/Job pods и Warning events.' }
 if ($diagnostics -notmatch 'OOMKilled' -or $diagnostics -notmatch 'ImagePullBackOff' -or $diagnostics -notmatch 'Загрузка AI возобновляется' -or $diagnostics -notmatch 'logs job/local-apply-test') { throw 'В диагностике отсутствует причина ошибки или команда для расследования.' }
-Write-Host 'PowerShell 5.1: синтаксис, владелец процесса, JSON controller/Job image, UTF-8 native stdin/stdout и диагностика проверены.'
+$script:nodeAttempts = 0
+$script:missingContext = $false
+$script:neverReady = $false
+function Native-Output {
+    param($Executable,$Arguments)
+    if ($Arguments -contains 'get-contexts') {
+        $script:LASTEXITCODE = 0
+        if ($script:missingContext) { return 'other-context' }
+        return 'docker-desktop'
+    }
+    $script:nodeAttempts++
+    if ($script:neverReady -or $script:nodeAttempts -lt 3) { $script:LASTEXITCODE = 1; return $null }
+    $script:LASTEXITCODE = 0
+    return 'node/docker-desktop'
+}
+$node = Wait-Kubernetes -TimeoutSeconds 5 -PollSeconds 0
+if ($node -ne 'node/docker-desktop' -or $script:nodeAttempts -ne 3) { throw 'Launcher не переждал гонку запуска Kubernetes после готовности Linux engine.' }
+$script:neverReady = $true
+$rejected = $false
+try { Wait-Kubernetes -TimeoutSeconds 0 -PollSeconds 0 | Out-Null } catch { $rejected = $_.Exception.Message -match 'не запустился' }
+if (-not $rejected) { throw 'Неготовый Kubernetes должен давать ограниченную по времени диагностику.' }
+$script:missingContext = $true
+$rejected = $false
+try { Wait-Kubernetes -TimeoutSeconds 0 -PollSeconds 0 | Out-Null } catch { $rejected = $_.Exception.Message -match 'Контекст docker-desktop отсутствует' }
+if (-not $rejected) { throw 'Отсутствующий Kubernetes context не должен приниматься за гонку запуска.' }
+Write-Host 'PowerShell 5.1: синтаксис, владелец процесса, JSON controller/Job image, UTF-8 native stdin/stdout, диагностика и гонка старта Kubernetes проверены.'
