@@ -39,6 +39,8 @@
 
 ## Локальные команды/проверки
 
+`ManagementService.Tests/SwaggerGenerationTests.cs` проверяет HTTP-генерацию семи .NET Swagger-документов на реальных сборках контроллеров и combined-host conventions без запуска БД/Kafka. Центральный `Microsoft.OpenApi` должен оставаться совместимым с ABI установленного Swashbuckle; для `Swashbuckle.AspNetCore 10.2.1` используется `Microsoft.OpenApi 2.7.5`. Успешная компиляция с OpenAPI.NET 3.x не доказывает работоспособность Swagger JSON.
+
 ```bash
 dotnet build services/ManagementService/ManagementService.csproj -nologo
 dotnet test services/ManagementService/ManagementService.Tests/ManagementService.Tests.csproj -nologo

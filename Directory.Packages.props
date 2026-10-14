@@ -21,7 +21,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.8" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
     <!-- Swashbuckle.AspNetCore 10.x на runtime ожидает OpenAPI.NET 2.x; pin на 3.x ломает swagger JSON генерацию -->
-    <PackageVersion Include="Microsoft.OpenApi" Version="3.6.0" />
+    <PackageVersion Include="Microsoft.OpenApi" Version="2.7.5" />
     <PackageVersion Include="MongoDB.Driver" Version="3.9.0" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.2" />
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.3" />

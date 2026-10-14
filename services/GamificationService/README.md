@@ -7,6 +7,7 @@
 ## Что здесь является источником истины
 
 - [Program.cs](Program.cs) — состав приложения, auth/internal API, SignalR и Kafka/runtime registrations.
+- `Configuration/GamificationSwaggerConfiguration.cs` — реальная Swagger registration, bearer scheme и server URL `/api/gamification`. Непрефиксованные schema paths должны разрешаться через этот server URL, включая документацию через gateway `/swagger/engagement/`.
 - [Infrastructure/Data/GamificationDbContext.cs](Infrastructure/Data/GamificationDbContext.cs) — PostgreSQL-модель и конфигурация сущностей.
 - `Application/Services/ManagementTaskEventProcessor.cs` и `ManagementTaskEventsConsumer.cs` — typed consume `management.task-events.v1`.
 - `Application/Services/ManagementProjectProgressSnapshotConsumer.cs`, `ProjectProgressProjectionWriter.cs`, `ProjectProgressBootstrapClient.cs` и `ProjectProgressBootstrapService.cs` — local projection `project_progress_snapshots`, bootstrap import и дальнейшая синхронизация progress snapshot через Kafka.

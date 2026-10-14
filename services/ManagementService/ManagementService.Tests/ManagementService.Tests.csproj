@@ -23,5 +23,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ManagementService.csproj" />
+    <ProjectReference Include="..\..\AccessHost\AccessHost.csproj" />
+    <ProjectReference Include="..\..\WorkspaceHost\WorkspaceHost.csproj" />
+    <ProjectReference Include="..\..\RealtimeHost\RealtimeHost.csproj" />
+    <ProjectReference Include="..\..\GamificationService\GamificationService.csproj" />
   </ItemGroup>
 </Project>
